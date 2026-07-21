@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SEO from '../components/SEO';
 import { products } from '../data/products';
 
 const categories = ['All', ...new Set(products.map((p) => p.category))];
@@ -9,6 +10,11 @@ export default function Gear() {
 
   return (
     <div>
+      <SEO
+        title="Best Mobile Work Gear"
+        description="Hand-picked laptops, stands, chargers, keyboards, and accessories for remote workers who work from anywhere. Tested in real cafes and co-working spaces."
+        path="/gear"
+      />
       {/* Page header */}
       <div style={{ background: 'var(--black)', color: 'var(--white)', padding: '4rem 0' }}>
         <div className="container">

@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { posts } from '../data/posts';
 
 export default function Blog() {
   return (
     <div>
+      <SEO
+        title="Gear Guides & Reviews"
+        description="In-depth buying guides, setup walkthroughs, and honest gear reviews for remote workers who work from coffee shops, co-working spaces, and beyond."
+        path="/blog"
+      />
       <div style={{ background: 'var(--black)', color: 'var(--white)', padding: '4rem 0' }}>
         <div className="container">
           <p className="section-label">Guides & Reviews</p>

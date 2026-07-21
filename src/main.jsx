@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Amplify } from 'aws-amplify';
+import { HelmetProvider } from 'react-helmet-async';
 import outputs from '../amplify_outputs.json';
 import './index.css';
 import App from './App.jsx';
@@ -9,6 +10,8 @@ Amplify.configure(outputs);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </StrictMode>,
 );

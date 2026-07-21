@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import EmailSignup from '../components/EmailSignup';
 import { products } from '../data/products';
 import { posts } from '../data/posts';
@@ -16,6 +17,7 @@ export default function Home() {
 
   return (
     <>
+      <SEO path="/" />
       {/* Hero */}
       <section className="hero">
         <div className="container">

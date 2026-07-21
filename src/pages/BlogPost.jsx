@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { posts } from '../data/posts';
 import EmailSignup from '../components/EmailSignup';
 
@@ -10,6 +11,12 @@ export default function BlogPost() {
 
   return (
     <>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        type="article"
+      />
       <div style={{ background: 'var(--black)', color: 'var(--white)', padding: '3rem 0 2rem' }}>
         <div className="container">
           <Link to="/blog" style={{ color: 'var(--gray-400)', fontSize: '0.85rem', fontWeight: 600 }}>

@@ -1,8 +1,14 @@
+import SEO from '../components/SEO';
 import EmailSignup from '../components/EmailSignup';
 
 export default function About() {
   return (
     <div>
+      <SEO
+        title="About"
+        description="The Laptop Life is built by remote workers who test gear in real coffee shops, co-working spaces, and on the go — not just in a studio."
+        path="/about"
+      />
       <div style={{ background: 'var(--black)', color: 'var(--white)', padding: '4rem 0' }}>
         <div className="container">
           <p className="section-label">Our story</p>
