@@ -1,4 +1,15 @@
-export const posts = [
+export interface Post {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  readTime: string;
+  emoji: string;
+  body: string;
+}
+
+export const posts: Post[] = [
   {
     slug: 'best-laptop-stands-coffee-shop',
     title: 'The 7 Best Laptop Stands for Coffee Shop Warriors (2024)',

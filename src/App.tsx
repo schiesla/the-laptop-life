@@ -8,10 +8,11 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import About from './pages/About';
 import Privacy from './pages/Privacy';
-
-const UNDER_CONSTRUCTION = import.meta.env.VITE_UNDER_CONSTRUCTION === 'true';
+import useEnvVariables from './hooks/useEnvVariables';
 
 export default function App() {
+  const { UNDER_CONSTRUCTION } = useEnvVariables();
+  
   if (UNDER_CONSTRUCTION) {
     return <UnderConstruction />;
   }

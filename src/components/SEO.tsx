@@ -4,7 +4,14 @@ const SITE = 'The Laptop Life';
 const DOMAIN = 'https://www.the-laptop-life.com';
 const DEFAULT_DESC = 'Honest gear reviews and buying guides for laptops, stands, chargers, and everything the modern remote worker needs to be productive anywhere.';
 
-export default function SEO({ title, description, path = '', type = 'website' }) {
+interface SEOProps {
+  title?: string;
+  description?: string;
+  path?: string;
+  type?: string;
+}
+
+export default function SEO({ title, description, path = '', type = 'website' }: SEOProps) {
   const fullTitle = title ? `${title} | ${SITE}` : `${SITE} — When anywhere is your office`;
   const desc = description || DEFAULT_DESC;
   const canonical = `${DOMAIN}${path}`;

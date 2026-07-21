@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
+import type { Schema } from '../../amplify/data/resource';
 
-async function saveEmail(email, source) {
+type Status = 'idle' | 'loading' | 'success' | 'error' | 'no-backend';
+
+interface EmailSignupProps {
+  source?: string;
+}
+
+async function saveEmail(email: string, source: string) {
   // generateClient requires amplify_outputs.json to be present (deployed or sandbox).
   const { generateClient } = await import('aws-amplify/data');
-  const client = generateClient();
+  const client = generateClient<Schema>();
   await client.models.EmailSubscriber.create({
     email,
     source,
@@ -11,11 +18,11 @@ async function saveEmail(email, source) {
   });
 }
 
-export default function EmailSignup({ source = 'unknown' }) {
+export default function EmailSignup({ source = 'unknown' }: EmailSignupProps) {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState('idle'); // idle | loading | success | error | no-backend
+  const [status, setStatus] = useState<Status>('idle');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) return;
     setStatus('loading');
@@ -25,7 +32,8 @@ export default function EmailSignup({ source = 'unknown' }) {
       setEmail('');
     } catch (err) {
       // Backend not deployed yet (local dev without sandbox)
-      if (err?.message?.includes('No current user') || err?.message?.includes('amplify_outputs')) {
+      const message = err instanceof Error ? err.message : '';
+      if (message.includes('No current user') || message.includes('amplify_outputs')) {
         setStatus('no-backend');
       } else {
         console.error('Email signup error:', err);

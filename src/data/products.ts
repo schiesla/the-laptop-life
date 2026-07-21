@@ -1,4 +1,15 @@
-export const products = [
+export interface Product {
+  id: number;
+  name: string;
+  category: string;
+  price: string;
+  description: string;
+  emoji: string;
+  affiliateUrl: string;
+  badge: string | null;
+}
+
+export const products: Product[] = [
   {
     id: 1,
     name: 'Nexstand K2 Laptop Stand',
