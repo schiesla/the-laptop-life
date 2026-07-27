@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import { client } from '../lib/client';
+import { getClient } from '../lib/client';
+import type { Schema } from '../../amplify/data/resource';
+
+type Product = Schema['Product']['type'];
 
 export function useProducts() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    client.models.Product.list({ filter: { published: { eq: true } } })
+    getClient().models.Product.list({ filter: { published: { eq: true } } })
       .then(({ data }) => {
         const sorted = [...data].sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0));
         setProducts(sorted);

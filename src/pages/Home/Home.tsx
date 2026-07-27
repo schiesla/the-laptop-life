@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import EmailSignup from '../../components/EmailSignup/EmailSignup';
-import { products } from '../../data/products';
-import { posts } from '../../data/posts';
+import { usePosts } from '../../hooks/usePosts';
+import { useProducts } from '../../hooks/useProducts';
 import './Home.css';
 
 const features = [
@@ -13,6 +13,8 @@ const features = [
 ];
 
 export default function Home() {
+  const { posts, loading: postsLoading } = usePosts();
+  const { products, loading: productsLoading } = useProducts();
   const featuredProducts = products.slice(0, 3);
   const latestPosts = posts.slice(0, 2);
 
@@ -61,28 +63,30 @@ export default function Home() {
         <div className="container">
           <p className="section-label">Editor's Picks</p>
           <h2 className="section-title">Gear we carry every day</h2>
-          <div className="grid-3">
-            {featuredProducts.map((p) => (
-              <div className="product-card" key={p.id}>
-                <div className="product-img-placeholder">{p.emoji}</div>
-                <div className="product-body">
-                  <p className="product-tag">{p.category}</p>
-                  <h3>{p.name}</h3>
-                  <p>{p.description}</p>
-                  <div className="product-footer">
-                    <span className="price">{p.price}</span>
-                    <a
-                      href={p.affiliateUrl}
-                      className="btn btn-primary btn-sm"
-                      rel="noopener noreferrer"
-                    >
-                      View Deal →
-                    </a>
+          {productsLoading ? (
+            <div className="grid-3">
+              {[1, 2, 3].map((n) => <div key={n} className="product-card skeleton" style={{ minHeight: 320 }} />)}
+            </div>
+          ) : (
+            <div className="grid-3">
+              {featuredProducts.map((p) => (
+                <div className="product-card" key={p.id}>
+                  <div className="product-img-placeholder">{p.emoji}</div>
+                  <div className="product-body">
+                    <p className="product-tag">{p.category}</p>
+                    <h3>{p.name}</h3>
+                    <p>{p.description}</p>
+                    <div className="product-footer">
+                      <span className="price">{p.price}</span>
+                      <a href={p.affiliateUrl} className="btn btn-primary btn-sm" rel="noopener noreferrer">
+                        View Deal →
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
           <div className="gear-cta">
             <Link to="/gear" className="btn btn-primary">See All Gear</Link>
           </div>
@@ -94,24 +98,30 @@ export default function Home() {
         <div className="container">
           <p className="section-label">From the Blog</p>
           <h2 className="section-title">Guides worth reading</h2>
-          <div className="grid-2">
-            {latestPosts.map((post) => (
-              <Link to={`/blog/${post.slug}`} key={post.slug} className="card-link">
-                <article className="blog-card">
-                  <div className="blog-card-img-placeholder">{post.emoji}</div>
-                  <div className="blog-card-body">
-                    <div className="blog-meta">
-                      <span>{post.category}</span>
-                      <span>{post.readTime}</span>
+          {postsLoading ? (
+            <div className="grid-2">
+              {[1, 2].map((n) => <div key={n} className="blog-card skeleton" style={{ minHeight: 280 }} />)}
+            </div>
+          ) : (
+            <div className="grid-2">
+              {latestPosts.map((post) => (
+                <Link to={`/blog/${post.slug}`} key={post.id} className="card-link">
+                  <article className="blog-card">
+                    <div className="blog-card-img-placeholder">{post.emoji}</div>
+                    <div className="blog-card-body">
+                      <div className="blog-meta">
+                        <span>{post.category}</span>
+                        <span>{post.readTime}</span>
+                      </div>
+                      <h3>{post.title}</h3>
+                      <p>{post.excerpt}</p>
+                      <span className="read-more">Read article →</span>
                     </div>
-                    <h3>{post.title}</h3>
-                    <p>{post.excerpt}</p>
-                    <span className="read-more">Read article →</span>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

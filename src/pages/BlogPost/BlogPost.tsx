@@ -1,14 +1,24 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
-import { posts } from '../../data/posts';
+import { usePost } from '../../hooks/usePosts';
 import EmailSignup from '../../components/EmailSignup/EmailSignup';
 import './BlogPost.css';
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const post = posts.find((p) => p.slug === slug);
+  const { post, loading, error } = usePost(slug);
 
-  if (!post) return <Navigate to="/blog" replace />;
+  if (loading) {
+    return (
+      <div style={{ maxWidth: 740, margin: '0 auto', padding: '3rem 1.5rem' }}>
+        <div className="skeleton" style={{ height: 40, marginBottom: '1rem', borderRadius: 8 }} />
+        <div className="skeleton" style={{ height: 20, width: '60%', marginBottom: '2rem', borderRadius: 8 }} />
+        <div className="skeleton" style={{ height: 200, borderRadius: 8 }} />
+      </div>
+    );
+  }
+
+  if (error || !post) return <Navigate to="/blog" replace />;
 
   return (
     <>

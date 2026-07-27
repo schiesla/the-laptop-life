@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import SEO from '../../components/SEO/SEO';
-import { products } from '../../data/products';
+import { useProducts } from '../../hooks/useProducts';
 import './Gear.css';
 
-const categories = ['All', ...new Set(products.map((p) => p.category))];
-
 export default function Gear() {
+  const { products, loading } = useProducts();
   const [active, setActive] = useState('All');
+  const categories = ['All', ...new Set(products.map((p) => p.category).filter(Boolean))];
   const filtered = active === 'All' ? products : products.filter((p) => p.category === active);
 
   return (
@@ -43,6 +43,11 @@ export default function Gear() {
             ))}
           </div>
 
+          {loading ? (
+            <div className="grid-3">
+              {[1, 2, 3, 4, 5, 6].map((n) => <div key={n} className="product-card skeleton" style={{ minHeight: 320 }} />)}
+            </div>
+          ) : (
           <div className="grid-3">
             {filtered.map((p) => (
               <div className="product-card" key={p.id}>
@@ -66,6 +71,7 @@ export default function Gear() {
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
     </div>
