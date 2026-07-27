@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import UnderConstruction from './components/UnderConstruction';
-import Home from './pages/Home';
-import Gear from './pages/Gear';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
-import About from './pages/About';
-import Privacy from './pages/Privacy';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import UnderConstruction from './components/UnderConstruction/UnderConstruction';
+import Home from './pages/Home/Home';
+import Gear from './pages/Gear/Gear';
+import Blog from './pages/Blog/Blog';
+import BlogPost from './pages/BlogPost/BlogPost';
+import About from './pages/About/About';
+import Privacy from './pages/Privacy/Privacy';
 import useEnvVariables from './hooks/useEnvVariables';
 
 export default function App() {

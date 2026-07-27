@@ -1,0 +1,19 @@
+.about-header { background: var(--black); color: var(--white); padding: 4rem 0; }
+.about-header .section-title { color: var(--white); }
+
+.about-content { max-width: 740px; }
+
+.about-lead { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.5; }
+
+.about-copy { color: var(--gray-600); margin-bottom: 1.25rem; }
+.about-copy-last { margin-bottom: 3rem; }
+
+.about-cta {
+  background: var(--black);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+}
+.about-cta h2 { font-weight: 900; margin-bottom: 0.75rem; }
+.about-cta p { color: var(--gray-400); margin-bottom: 1.75rem; }

@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import SEO from '../components/SEO';
-import EmailSignup from '../components/EmailSignup';
-import { products } from '../data/products';
-import { posts } from '../data/posts';
+import SEO from '../../components/SEO/SEO';
+import EmailSignup from '../../components/EmailSignup/EmailSignup';
+import { products } from '../../data/products';
+import { posts } from '../../data/posts';
+import './Home.css';
 
 const features = [
   { icon: '☕', title: 'Coffee Shop Ready', description: 'Gear tested in hundreds of hours at real cafes, not just spec sheets.' },
@@ -43,7 +44,7 @@ export default function Home() {
             No fluff, no paid placements. Just honest takes on the gear that actually makes
             mobile work better.
           </p>
-          <div className="grid-3" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))' }}>
+          <div className="grid-3 features-grid">
             {features.map((f) => (
               <div className="card" key={f.title}>
                 <div className="card-icon">{f.icon}</div>
@@ -72,8 +73,7 @@ export default function Home() {
                     <span className="price">{p.price}</span>
                     <a
                       href={p.affiliateUrl}
-                      className="btn btn-primary"
-                      style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}
+                      className="btn btn-primary btn-sm"
                       rel="noopener noreferrer"
                     >
                       View Deal →
@@ -83,7 +83,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+          <div className="gear-cta">
             <Link to="/gear" className="btn btn-primary">See All Gear</Link>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Home() {
           <h2 className="section-title">Guides worth reading</h2>
           <div className="grid-2">
             {latestPosts.map((post) => (
-              <Link to={`/blog/${post.slug}`} key={post.slug} style={{ display: 'contents' }}>
+              <Link to={`/blog/${post.slug}`} key={post.slug} className="card-link">
                 <article className="blog-card">
                   <div className="blog-card-img-placeholder">{post.emoji}</div>
                   <div className="blog-card-body">

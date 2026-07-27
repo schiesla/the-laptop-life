@@ -1,0 +1,26 @@
+/* Nav */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--black);
+  border-bottom: 1px solid var(--gray-800);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo { font-size: 1.25rem; font-weight: 900; color: var(--white); letter-spacing: -0.5px; }
+.nav-logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--gray-400); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+
+@media (max-width: 640px) {
+  .nav-links { gap: 1rem; }
+}

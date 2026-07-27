@@ -1,0 +1,15 @@
+/* Email form */
+.email-form { display: flex; gap: 0.5rem; max-width: 480px; margin: 0 auto; flex-wrap: wrap; }
+.email-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--gray-200);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.email-form input:focus { border-color: var(--accent); }
+
+.success-msg { color: #16a34a; font-weight: 600; font-size: 0.95rem; margin-top: 0.5rem; }

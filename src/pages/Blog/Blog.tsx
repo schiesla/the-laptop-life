@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import SEO from '../components/SEO';
-import { posts } from '../data/posts';
+import SEO from '../../components/SEO/SEO';
+import { posts } from '../../data/posts';
+import './Blog.css';
 
 export default function Blog() {
   return (
@@ -10,11 +11,11 @@ export default function Blog() {
         description="In-depth buying guides, setup walkthroughs, and honest gear reviews for remote workers who work from coffee shops, co-working spaces, and beyond."
         path="/blog"
       />
-      <div style={{ background: 'var(--black)', color: 'var(--white)', padding: '4rem 0' }}>
+      <div className="blog-header">
         <div className="container">
           <p className="section-label">Guides & Reviews</p>
-          <h1 className="section-title" style={{ color: 'var(--white)' }}>The Blog</h1>
-          <p style={{ color: 'var(--gray-400)', fontSize: '1.05rem', maxWidth: 480 }}>
+          <h1 className="section-title">The Blog</h1>
+          <p className="blog-header-sub">
             In-depth buying guides, setup walkthroughs, and honest gear reviews for the mobile worker.
           </p>
         </div>
@@ -24,7 +25,7 @@ export default function Blog() {
         <div className="container">
           <div className="grid-2">
             {posts.map((post) => (
-              <Link to={`/blog/${post.slug}`} key={post.slug} style={{ display: 'contents' }}>
+              <Link to={`/blog/${post.slug}`} key={post.slug} className="card-link">
                 <article className="blog-card">
                   <div className="blog-card-img-placeholder">{post.emoji}</div>
                   <div className="blog-card-body">

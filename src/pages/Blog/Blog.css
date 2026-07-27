@@ -1,0 +1,3 @@
+.blog-header { background: var(--black); color: var(--white); padding: 4rem 0; }
+.blog-header .section-title { color: var(--white); }
+.blog-header-sub { color: var(--gray-400); font-size: 1.05rem; max-width: 480px; }

@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react';
-import type { Schema } from '../../amplify/data/resource';
+import type { Schema } from '../../../amplify/data/resource';
+import './EmailSignup.css';
 
 type Status = 'idle' | 'loading' | 'success' | 'error' | 'no-backend';
 

@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import './SEO.css';
 
 const SITE = 'The Laptop Life';
 const DOMAIN = 'https://www.the-laptop-life.com';

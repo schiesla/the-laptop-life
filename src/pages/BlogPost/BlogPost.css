@@ -1,0 +1,42 @@
+.post-header { background: var(--black); color: var(--white); padding: 3rem 0 2rem; }
+.post-back-link { color: var(--gray-400); font-size: 0.85rem; font-weight: 600; }
+
+.post-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+/* Blog post page */
+.blog-post { max-width: 740px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+.blog-post h1 { font-size: clamp(1.8rem, 4vw, 2.75rem); font-weight: 900; line-height: 1.15; margin-bottom: 1rem; letter-spacing: -0.5px; }
+.blog-post .post-meta { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 2rem; display: flex; gap: 1rem; }
+.blog-post .post-body h2 { font-size: 1.5rem; font-weight: 800; margin: 2.5rem 0 0.75rem; }
+.blog-post .post-body h3 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.5rem; }
+.blog-post .post-body p { margin-bottom: 1.25rem; color: var(--gray-600); }
+.blog-post .post-body ul, .blog-post .post-body ol { margin: 0 0 1.25rem 1.5rem; color: var(--gray-600); }
+.blog-post .post-body li { margin-bottom: 0.4rem; }
+
+.affiliate-box {
+  background: var(--gray-100);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+}
+.affiliate-box strong { display: block; margin-bottom: 0.4rem; }
+.affiliate-box a { color: var(--accent-dark); font-weight: 600; text-decoration: underline; }
+
+.post-cta {
+  background: var(--black);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+.post-cta-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.post-cta-sub { color: var(--gray-400); font-size: 0.9rem; margin-bottom: 1.5rem; }
