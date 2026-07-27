@@ -131,6 +131,15 @@ img { max-width: 100%; display: block; }
 .blog-card-body p { color: var(--gray-600); font-size: 0.88rem; flex: 1; }
 .read-more { display: inline-block; margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--accent-dark); }
 
+/* Skeleton loading */
+@keyframes shimmer { from { background-position: -400px 0; } to { background-position: 400px 0; } }
+.skeleton {
+  background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 50%, var(--gray-100) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 12px;
+}
+
 @keyframes fadeup { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
 .toast {
   position: fixed;
