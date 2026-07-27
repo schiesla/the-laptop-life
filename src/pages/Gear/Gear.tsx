@@ -6,7 +6,7 @@ import './Gear.css';
 export default function Gear() {
   const { products, loading } = useProducts();
   const [active, setActive] = useState('All');
-  const categories = ['All', ...new Set(products.map((p) => p.category).filter(Boolean))];
+  const categories = ['All', ...new Set(products.map((p) => p.category).filter((c): c is string => c != null))];
   const filtered = active === 'All' ? products : products.filter((p) => p.category === active);
 
   return (
@@ -60,7 +60,7 @@ export default function Gear() {
                   <div className="product-footer">
                     <span className="price">{p.price}</span>
                     <a
-                      href={p.affiliateUrl}
+                      href={p.affiliateUrl ?? undefined}
                       className="btn btn-primary btn-sm"
                       rel="noopener noreferrer"
                     >

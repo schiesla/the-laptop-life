@@ -24,7 +24,7 @@ export default function BlogPost() {
     <>
       <SEO
         title={post.title}
-        description={post.excerpt}
+        description={post.excerpt ?? undefined}
         path={`/blog/${post.slug}`}
         type="article"
       />
@@ -45,7 +45,7 @@ export default function BlogPost() {
 
         <div
           className="post-body"
-          dangerouslySetInnerHTML={{ __html: post.body }}
+          dangerouslySetInnerHTML={{ __html: post.body ?? '' }}
         />
 
         {/* In-article email capture */}

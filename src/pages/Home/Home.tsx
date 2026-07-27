@@ -78,7 +78,7 @@ export default function Home() {
                     <p>{p.description}</p>
                     <div className="product-footer">
                       <span className="price">{p.price}</span>
-                      <a href={p.affiliateUrl} className="btn btn-primary btn-sm" rel="noopener noreferrer">
+                      <a href={p.affiliateUrl ?? undefined} className="btn btn-primary btn-sm" rel="noopener noreferrer">
                         View Deal →
                       </a>
                     </div>
