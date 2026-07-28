@@ -64,7 +64,7 @@ export default function Home() {
       <section className="section section-alt">
         <div className="container">
           <p className="section-label">Editor's Picks</p>
-          <h2 className="section-title">Editor's picks</h2>
+          <h2 className="section-title">Gear worth a look</h2>
           {productsLoading ? (
             <div className="grid-3">
               {[1, 2, 3].map((n) => <div key={n} className="product-card skeleton" style={{ minHeight: 320 }} />)}
