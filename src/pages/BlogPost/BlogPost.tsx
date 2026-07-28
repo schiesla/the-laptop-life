@@ -1,12 +1,14 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
-import { usePost } from '../../hooks/usePosts';
 import EmailSignup from '../../components/EmailSignup/EmailSignup';
+import { usePost } from '../../hooks/usePosts';
+import useEnvVariables from '../../hooks/useEnvVariables';
 import './BlogPost.css';
 
 export default function BlogPost() {
   const { slug } = useParams();
   const { post, loading, error } = usePost(slug);
+  const { ENABLE_NEWSLETTER } = useEnvVariables();
 
   if (loading) {
     return (
@@ -48,12 +50,13 @@ export default function BlogPost() {
           dangerouslySetInnerHTML={{ __html: post.body ?? '' }}
         />
 
-        {/* In-article email capture */}
-        <div className="post-cta">
-          <p className="post-cta-title">Want more guides like this?</p>
-          <p className="post-cta-sub">Join our list and get the best mobile work gear drops straight to your inbox.</p>
-          <EmailSignup source="blog-post" />
-        </div>
+        {ENABLE_NEWSLETTER && (
+          <div className="post-cta">
+            <p className="post-cta-title">Want more guides like this?</p>
+            <p className="post-cta-sub">Join our list and get the best mobile work gear drops straight to your inbox.</p>
+            <EmailSignup source="blog-post" />
+          </div>
+        )}
       </article>
     </>
   );

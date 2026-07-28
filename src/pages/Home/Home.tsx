@@ -3,6 +3,7 @@ import SEO from '../../components/SEO/SEO';
 import EmailSignup from '../../components/EmailSignup/EmailSignup';
 import { usePosts } from '../../hooks/usePosts';
 import { useProducts } from '../../hooks/useProducts';
+import useEnvVariables from '../../hooks/useEnvVariables';
 import './Home.css';
 
 const features = [
@@ -13,6 +14,7 @@ const features = [
 ];
 
 export default function Home() {
+  const { ENABLE_NEWSLETTER } = useEnvVariables();
   const { posts, loading: postsLoading } = usePosts();
   const { products, loading: productsLoading } = useProducts();
   const featuredProducts = products.slice(0, 3);
@@ -125,14 +127,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="newsletter-band">
-        <div className="container">
-          <h2>Get the best gear guides first.</h2>
-          <p>Join 2,000+ remote workers getting weekly recommendations, deals, and setup inspiration.</p>
-          <EmailSignup source="newsletter-band" />
-        </div>
-      </section>
+      {ENABLE_NEWSLETTER && (
+        <section className="newsletter-band">
+          <div className="container">
+            <h2>Get the best gear guides first.</h2>
+            <p>Join 2,000+ remote workers getting weekly recommendations, deals, and setup inspiration.</p>
+            <EmailSignup source="newsletter-band" />
+          </div>
+        </section>
+      )}
     </>
   );
 }

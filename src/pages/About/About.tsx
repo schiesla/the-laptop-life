@@ -1,8 +1,10 @@
 import SEO from '../../components/SEO/SEO';
 import EmailSignup from '../../components/EmailSignup/EmailSignup';
+import useEnvVariables from '../../hooks/useEnvVariables';
 import './About.css';
 
 export default function About() {
+  const { ENABLE_NEWSLETTER } = useEnvVariables();
   return (
     <div>
       <SEO
@@ -37,11 +39,13 @@ export default function About() {
             anywhere, without spending more than you need to.
           </p>
 
-          <div className="about-cta">
-            <h2>Stay in the loop</h2>
-            <p>Gear guides, curated picks, and deal alerts. No spam.</p>
-            <EmailSignup source="about-page" />
-          </div>
+          {ENABLE_NEWSLETTER && (
+            <div className="about-cta">
+              <h2>Stay in the loop</h2>
+              <p>Gear guides, curated picks, and deal alerts. No spam.</p>
+              <EmailSignup source="about-page" />
+            </div>
+          )}
         </div>
       </section>
     </div>
