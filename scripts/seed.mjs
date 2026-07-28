@@ -60,12 +60,12 @@ const posts = [
       <h2>Why You Need a Portable Laptop Stand</h2>
       <p>Working from coffee shops is a dream — until your neck starts screaming after two hours. The average table puts your laptop screen about 10 inches below eye level, forcing you into a hunched posture that compounds over time.</p>
       <p>A good portable stand fixes this instantly. The best ones weigh under 300g and fold small enough to slip in the side pocket of any backpack.</p>
-      <h2>Our Top Picks</h2>
+      <h2>Top-Rated Picks</h2>
       <h3>1. Nexstand K2 — Best Overall</h3>
-      <p>The Nexstand K2 is the gold standard for coffee shop workers. It's adjustable to six heights, holds laptops up to 17", and folds to the size of a water bottle. Incredibly stable for the price.</p>
+      <p>The Nexstand K2 is a top-rated pick among coffee shop workers. It's adjustable to six heights, holds laptops up to 17", and folds to the size of a water bottle. Reviewers consistently praise its stability for the price.</p>
       <div class="affiliate-box">
-        <strong>💛 Our Pick: Nexstand K2 Laptop Stand</strong>
-        Lightweight, packable, and genuinely sturdy. Worth every cent for daily nomads.
+        <strong>💛 Top Pick: Nexstand K2 Laptop Stand</strong>
+        Lightweight, packable, and highly rated for sturdiness. Strong value for daily nomads.
         <br/><a href="#" rel="noopener noreferrer">Check price on Amazon →</a>
       </div>
       <h3>2. Rain Design mStand360 — Best for Style</h3>
@@ -101,8 +101,8 @@ const posts = [
       <h3>Best for MacBook Users: Anker 737 (PowerCore 26K)</h3>
       <p>140W output, 26,800mAh capacity, and a display that shows wattage in real time.</p>
       <div class="affiliate-box">
-        <strong>💛 Our Pick: Anker 737 Power Bank</strong>
-        The only power bank that genuinely replaces the wall for a full work day.
+        <strong>💛 Top Pick: Anker 737 Power Bank</strong>
+        Rated by users as one of the few power banks capable of replacing the wall for a full work day.
         <br/><a href="#" rel="noopener noreferrer">Check price on Amazon →</a>
       </div>
       <h2>Key Numbers to Know</h2>
@@ -117,7 +117,7 @@ const posts = [
   {
     slug: 'work-from-anywhere-setup-guide',
     title: "The Complete Work-From-Anywhere Setup: 12 Items That Fit in One Bag",
-    excerpt: "A full mobile office — laptop, monitors, audio, power — packed into a 20L daypack. Here's exactly what we carry and why.",
+    excerpt: "A full mobile office — laptop, monitors, audio, power — packed into a 20L daypack. Here's what to pack and why.",
     category: 'Setup',
     date: 'April 30, 2024',
     readTime: '12 min read',
@@ -132,8 +132,8 @@ const posts = [
       <h3>2. Portable Laptop Stand</h3><p>Nexstand K2 or similar.</p>
       <h3>3. Compact Wireless Keyboard</h3><p>Logitech MX Keys Mini. Full-key feel at 60% the footprint.</p>
       <div class="affiliate-box">
-        <strong>💛 Our Pick: Logitech MX Keys Mini</strong>
-        Multi-device pairing, great key feel, rechargeable.
+        <strong>💛 Top Pick: Logitech MX Keys Mini</strong>
+        Multi-device pairing, well-reviewed key feel, rechargeable.
         <br/><a href="#" rel="noopener noreferrer">Check price on Amazon →</a>
       </div>
       <h3>4. Compact Mouse</h3><p>Logitech MX Anywhere 3. Works on any surface including glass and fabric.</p>
@@ -148,12 +148,12 @@ const posts = [
 ];
 
 const products = [
-  { name: 'Nexstand K2 Laptop Stand', category: 'Stands', price: '$39', description: 'Foldable, adjustable, and lighter than a paperback. The go-to stand for cafe workers.', emoji: '🖥️', affiliateUrl: '#', badge: "Editor's Pick", published: true, sortOrder: 10 },
-  { name: 'Anker 737 Power Bank 140W', category: 'Power', price: '$99', description: 'The only power bank that truly replaces your wall charger for a full work day.', emoji: '🔋', affiliateUrl: '#', badge: 'Best Seller', published: true, sortOrder: 20 },
+  { name: 'Nexstand K2 Laptop Stand', category: 'Stands', price: '$39', description: 'Foldable, adjustable, and lighter than a paperback. A favorite among cafe workers.', emoji: '🖥️', affiliateUrl: '#', badge: "Editor's Pick", published: true, sortOrder: 10 },
+  { name: 'Anker 737 Power Bank 140W', category: 'Power', price: '$99', description: 'One of the few power banks rated capable of replacing your wall charger for a full work day.', emoji: '🔋', affiliateUrl: '#', badge: 'Best Seller', published: true, sortOrder: 20 },
   { name: 'Logitech MX Keys Mini', category: 'Keyboards', price: '$99', description: 'Full-size key feel at 60% the footprint. Pairs to three devices simultaneously.', emoji: '⌨️', affiliateUrl: '#', badge: null, published: true, sortOrder: 30 },
-  { name: 'Sony WF-1000XM5', category: 'Audio', price: '$249', description: 'Industry-leading noise cancellation in the smallest form factor yet. Cafe essential.', emoji: '🎧', affiliateUrl: '#', badge: 'Top Rated', published: true, sortOrder: 40 },
+  { name: 'Sony WF-1000XM5', category: 'Audio', price: '$249', description: 'Industry-leading noise cancellation in the smallest form factor yet. A cafe essential.', emoji: '🎧', affiliateUrl: '#', badge: 'Top Rated', published: true, sortOrder: 40 },
   { name: 'Anker 7-in-1 USB-C Hub', category: 'Connectivity', price: '$35', description: 'HDMI 4K, 3× USB-A, USB-C PD, SD & microSD. One cable to rule them all.', emoji: '🔌', affiliateUrl: '#', badge: null, published: true, sortOrder: 50 },
-  { name: 'Lepow 15.6" Portable Monitor', category: 'Displays', price: '$179', description: 'Plug-and-play USB-C. Thin as a notebook, sharp as your desk monitor.', emoji: '🖥️', affiliateUrl: '#', badge: null, published: true, sortOrder: 60 },
+  { name: 'Lepow 15.6" Portable Monitor', category: 'Displays', price: '$179', description: 'Plug-and-play USB-C. Thin as a notebook, rated sharp enough to rival a desk monitor.', emoji: '🖥️', affiliateUrl: '#', badge: null, published: true, sortOrder: 60 },
 ];
 
 async function seed() {

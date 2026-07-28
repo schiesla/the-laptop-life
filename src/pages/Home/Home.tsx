@@ -6,10 +6,10 @@ import { useProducts } from '../../hooks/useProducts';
 import './Home.css';
 
 const features = [
-  { icon: '☕', title: 'Coffee Shop Ready', description: 'Gear tested in hundreds of hours at real cafes, not just spec sheets.' },
+  { icon: '☕', title: 'Coffee Shop Ready', description: 'Picks chosen for real cafe conditions, not just spec sheets.' },
   { icon: '⚡', title: 'Power Independent', description: 'Never hunt for an outlet again. We obsess over battery life and portable charging.' },
   { icon: '🎒', title: 'One-Bag Setups', description: "Full productivity that fits in the bag you're already carrying." },
-  { icon: '💸', title: 'Honest Affiliate Reviews', description: 'We only recommend gear we actually use. Affiliate links disclosed, always.' },
+  { icon: '💸', title: 'Honest Affiliate Reviews', description: 'We only recommend gear we’d stand behind. Affiliate links disclosed, always.' },
 ];
 
 export default function Home() {
@@ -62,7 +62,7 @@ export default function Home() {
       <section className="section section-alt">
         <div className="container">
           <p className="section-label">Editor's Picks</p>
-          <h2 className="section-title">Gear we carry every day</h2>
+          <h2 className="section-title">Editor's picks</h2>
           {productsLoading ? (
             <div className="grid-3">
               {[1, 2, 3].map((n) => <div key={n} className="product-card skeleton" style={{ minHeight: 320 }} />)}

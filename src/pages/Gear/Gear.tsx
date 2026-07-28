@@ -13,7 +13,7 @@ export default function Gear() {
     <div>
       <SEO
         title="Best Mobile Work Gear"
-        description="Hand-picked laptops, stands, chargers, keyboards, and accessories for remote workers who work from anywhere. Tested in real cafes and co-working spaces."
+        description="Hand-picked laptops, stands, chargers, keyboards, and accessories for remote workers who work from anywhere."
         path="/gear"
       />
       {/* Page header */}
@@ -22,7 +22,7 @@ export default function Gear() {
           <p className="section-label">Hand-picked gear</p>
           <h1 className="section-title">The Mobile Worker's Toolkit</h1>
           <p className="gear-header-sub">
-            Everything here has been tested in cafes, co-working spaces, and living rooms.
+            Everything here is chosen for people working from cafes, co-working spaces, and living rooms.
             Affiliate links help us keep the lights on — at no extra cost to you.
           </p>
         </div>
