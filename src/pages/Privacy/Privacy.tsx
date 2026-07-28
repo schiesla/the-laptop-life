@@ -21,6 +21,9 @@ export default function Privacy() {
 
         <h2>Unsubscribe</h2>
         <p>Every email includes an unsubscribe link. You can opt out at any time, instantly.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about this policy? Reach us at <a href="mailto:contact@the-laptop-life.com">contact@the-laptop-life.com</a>.</p>
       </div>
     </div>
   );

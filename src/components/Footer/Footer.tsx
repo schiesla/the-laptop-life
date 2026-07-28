@@ -11,6 +11,7 @@ export default function Footer() {
           <li><Link to="/blog">Blog</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/privacy">Privacy</Link></li>
+          <li><Link to="/terms">Terms</Link></li>
         </ul>
         <p className="footer-copy">
           © {new Date().getFullYear()} The Laptop Life. Some links are affiliate links.
