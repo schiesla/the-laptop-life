@@ -29,6 +29,7 @@ export default function BlogPost() {
         description={post.excerpt ?? undefined}
         path={`/blog/${post.slug}`}
         type="article"
+        image={post.image ?? undefined}
       />
       <div className="post-header">
         <div className="container">
@@ -44,6 +45,14 @@ export default function BlogPost() {
           <span>·</span>
           <span>{post.readTime}</span>
         </div>
+
+        {post.image && (
+          <img
+            src={post.image}
+            alt={post.imageAlt ?? post.title}
+            className="post-hero-img"
+          />
+        )}
 
         <div
           className="post-body"

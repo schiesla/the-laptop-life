@@ -6,7 +6,7 @@ export function PreviewIndex() {
   return (
     <div style={{ maxWidth: 740, margin: '0 auto', padding: '3rem 1.5rem' }}>
       <h1>Draft posts</h1>
-      <p>Unpublished content from src/data/drafts.js — not seeded to the database yet.</p>
+      <p>Unpublished content from src/data/drafts.ts — not seeded to the database yet.</p>
       {draftPosts.length === 0 && <p>No drafts.</p>}
       <ul>
         {draftPosts.map((post) => (
@@ -41,6 +41,14 @@ export default function Preview() {
           <span>·</span>
           <span>{post.readTime}</span>
         </div>
+
+        {post.image && (
+          <img
+            src={post.image}
+            alt={post.imageAlt ?? post.title}
+            className="post-hero-img"
+          />
+        )}
 
         <div
           className="post-body"

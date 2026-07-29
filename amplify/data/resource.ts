@@ -21,6 +21,8 @@ const schema = a.schema({
       date: a.string(),
       readTime: a.string(),
       emoji: a.string(),
+      image: a.string(),
+      imageAlt: a.string(),
       body: a.string(),
       published: a.boolean().default(true),
       sortOrder: a.integer().default(0),

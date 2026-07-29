@@ -10,9 +10,10 @@ interface SEOProps {
   description?: string;
   path?: string;
   type?: string;
+  image?: string;
 }
 
-export default function SEO({ title, description, path = '', type = 'website' }: SEOProps) {
+export default function SEO({ title, description, path = '', type = 'website', image }: SEOProps) {
   const fullTitle = title ? `${title} | ${SITE}` : `${SITE} — When anywhere is your office`;
   const desc = description || DEFAULT_DESC;
   const canonical = `${DOMAIN}${path}`;
@@ -27,9 +28,11 @@ export default function SEO({ title, description, path = '', type = 'website' }:
       <meta property="og:url" content={canonical} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE} />
+      {image && <meta property="og:image" content={image} />}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={desc} />
+      {image && <meta name="twitter:image" content={image} />}
     </Helmet>
   );
 }

@@ -1,12 +1,15 @@
 /**
- * Seed script — loads draft posts and products into DynamoDB via AppSync.
- * Content lives in src/data/drafts.js — proofread it at /preview (dev server,
- * dev-only route) before running this, then remove entries from drafts.js
- * once confirmed live so re-running this script doesn't duplicate them.
+ * Seed script — loads published posts/products into DynamoDB via AppSync.
+ * Content lives in src/data/published.ts — the permanent record of every
+ * approved post/product, so this script can seed ANY environment (sandbox,
+ * develop, main) at any time, not just whichever one you first approved
+ * content against. New content starts in src/data/drafts.ts, gets proofread
+ * at /preview (dev server, dev-only route), then gets MOVED (not deleted)
+ * into published.ts once approved.
  *
- * Usage:
- *   node scripts/seed.mjs                         # uses ../amplify_outputs.json (sandbox)
- *   OUTPUTS_PATH=.amplify-dev/amplify_outputs.json node scripts/seed.mjs   # e.g. develop branch
+ * Usage (--experimental-strip-types is required for Node to import the .ts file):
+ *   node --experimental-strip-types scripts/seed.mjs
+ *   OUTPUTS_PATH=.amplify-dev/amplify_outputs.json node --experimental-strip-types scripts/seed.mjs   # e.g. develop branch
  *
  * Requires the target amplify_outputs.json to be present — for a deployed branch,
  * generate it first with:
@@ -23,7 +26,7 @@ import { config } from 'dotenv';
 import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/data';
 import { signIn, fetchAuthSession } from 'aws-amplify/auth';
-import { draftPosts, draftProducts } from '../src/data/drafts.js';
+import { publishedPosts, publishedProducts } from '../src/data/published.ts';
 
 config({ path: fileURLToPath(new URL('.env.local', import.meta.url)) });
 
@@ -51,14 +54,14 @@ const client = generateClient({ authMode: 'userPool' });
 
 async function seed() {
   console.log('Seeding posts...');
-  for (const post of draftPosts) {
+  for (const post of publishedPosts) {
     const { errors } = await client.models.Post.create(post);
     if (errors) console.error(`  ✗ ${post.slug}`, errors);
     else console.log(`  ✓ ${post.slug}`);
   }
 
   console.log('Seeding products...');
-  for (const product of draftProducts) {
+  for (const product of publishedProducts) {
     const { errors } = await client.models.Product.create(product);
     if (errors) console.error(`  ✗ ${product.name}`, errors);
     else console.log(`  ✓ ${product.name}`);
