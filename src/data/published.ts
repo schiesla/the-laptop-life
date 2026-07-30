@@ -21,8 +21,8 @@ export const publishedPosts: ContentPost[] = [
     date: 'July 28, 2026',
     readTime: '9 min read',
     emoji: '⚡',
-    image: 'https://images.unsplash.com/photo-1750268375449-81b7edb348bf?fm=jpg&q=80&w=1600&auto=format&fit=crop',
-    imageAlt: 'Close-up of a USB-C charging port',
+    image: 'https://images.unsplash.com/photo-1517320069935-381614f8c1e5?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    imageAlt: 'Shallow focus photo of a white travel power adapter',
     published: true,
     sortOrder: 40,
     body: `
@@ -45,8 +45,8 @@ export const publishedPosts: ContentPost[] = [
 
       <div class="affiliate-box">
         <strong>🔌 Example of an EPR-rated cable</strong>
-        Anker 765 USB-C to USB-C Cable — rated for the full 240W EPR ceiling, so it won't bottleneck a high-wattage charger.
-        <br/><a href="https://www.amazon.com/dp/B0B6N1WHP6?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+        Anker 240W USB-C to USB-C Cable — rated for the full 240W EPR ceiling, so it won't bottleneck a high-wattage charger.
+        <br/><a href="https://www.amazon.com/dp/B0CCXT4QZR?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
       </div>
 
       <h3>PPS (Programmable Power Supply)</h3>
@@ -71,10 +71,42 @@ export const publishedPosts: ContentPost[] = [
       </table>
       <p><strong>Charging multiple devices at once:</strong> multi-port chargers split their total wattage across active ports, usually unevenly (the primary port gets priority). A "100W" charger feeding a laptop and a phone simultaneously might allocate 65W and 35W rather than 50/50 — check the port-by-port breakdown, not just the headline number.</p>
 
+      <h2>💰 Picks at Every Price Point</h2>
+      <p>You don't need to spend $60 on a charger if you're only ever topping off a phone — but you also don't want to underspend and end up slow-charging a laptop. Here's a real option at each tier:</p>
+      <table class="post-table">
+        <thead>
+          <tr><th>Tier</th><th>Wattage</th><th>Good for</th><th>Typical price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Budget</td><td>20W</td><td>Phone only</td><td>~$16</td></tr>
+          <tr><td>Mid-range</td><td>33W</td><td>Phone + earbuds/tablet</td><td>~$20</td></tr>
+          <tr><td>Everyday</td><td>65–67W</td><td>Phone, tablet, and ultrabook</td><td>~$55</td></tr>
+          <tr><td>High-power</td><td>100W</td><td>Full-speed laptop charging + more</td><td>~$60</td></tr>
+        </tbody>
+      </table>
+
       <div class="affiliate-box">
-        <strong>🧳 Example of a versatile everyday charger</strong>
-        Anker Prime 67W GaN Charger — a single 65–67W port comfortably covers most phones, tablets, and ultrabooks in one compact brick.
+        <strong>💵 Budget: Anker Nano Pro 20W</strong>
+        Single-port, pocket-sized, enough to fast-charge a phone. Not laptop-capable — this is the "I just need my phone charged" pick.
+        <br/><a href="https://www.amazon.com/dp/B099F2H5KH?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>⚖️ Mid-range: Anker 323 33W 2-Port</strong>
+        Adds a second port over the budget tier, so you can charge a phone and earbuds/tablet at once without doubling up on bricks.
+        <br/><a href="https://www.amazon.com/dp/B0B2MM3252?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>🧳 Everyday: Anker Prime 67W GaN Charger</strong>
+        A single 65–67W port comfortably covers most phones, tablets, and ultrabooks in one compact brick — the "one charger for almost everything" pick.
         <br/><a href="https://www.amazon.com/dp/B0C4YTB56H?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>🚀 High-power: Anker Prime 100W GaN, 3-Port</strong>
+        Enough headroom for full-speed 16" MacBook Pro-class laptop charging, with two more ports left over for a phone and tablet.
+        <br/><a href="https://www.amazon.com/dp/B0CZ6LXL8R?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
       </div>
 
       <h2>✅ A Practical Buying Checklist</h2>
@@ -92,4 +124,60 @@ export const publishedPosts: ContentPost[] = [
   },
 ];
 
-export const publishedProducts: ContentProduct[] = [];
+export const publishedProducts: ContentProduct[] = [
+  {
+    name: 'Anker Nano Pro 20W USB-C Charger',
+    category: 'Power',
+    price: '$11.99',
+    description: 'Single-port, pocket-sized, and enough to fast-charge a phone. The budget pick if you just need your phone charged.',
+    emoji: '⚡',
+    affiliateUrl: 'https://www.amazon.com/dp/B099F2H5KH?tag=schiesslestor-20',
+    badge: null,
+    published: true,
+    sortOrder: 10,
+  },
+  {
+    name: 'Anker 323 33W 2-Port Charger',
+    category: 'Power',
+    price: '$18.99',
+    description: 'Adds a second port over the budget tier, so a phone and earbuds or a tablet can charge at once without doubling up on bricks.',
+    emoji: '⚡',
+    affiliateUrl: 'https://www.amazon.com/dp/B0B2MM3252?tag=schiesslestor-20',
+    badge: null,
+    published: true,
+    sortOrder: 20,
+  },
+  {
+    name: 'Anker Prime 67W GaN Charger',
+    category: 'Power',
+    price: '$39.99',
+    description: 'A single 65–67W port comfortably covers most phones, tablets, and ultrabooks in one compact brick — one charger for almost everything.',
+    emoji: '⚡',
+    affiliateUrl: 'https://www.amazon.com/dp/B0C4YTB56H?tag=schiesslestor-20',
+    badge: "Editor's Pick",
+    published: true,
+    sortOrder: 30,
+  },
+  {
+    name: 'Anker Prime 100W GaN Charger, 3-Port',
+    category: 'Power',
+    price: '$59.99',
+    description: 'Enough headroom for full-speed 16" MacBook Pro-class laptop charging, with two more ports left over for a phone and tablet.',
+    emoji: '⚡',
+    affiliateUrl: 'https://www.amazon.com/dp/B0CZ6LXL8R?tag=schiesslestor-20',
+    badge: null,
+    published: true,
+    sortOrder: 40,
+  },
+  {
+    name: 'Anker 240W USB-C to USB-C Cable',
+    category: 'Cables',
+    price: '$15.99',
+    description: 'Rated for the full 240W EPR ceiling, so it won\'t bottleneck a high-wattage charger — pairs with any of the higher-power picks above.',
+    emoji: '🔌',
+    affiliateUrl: 'https://www.amazon.com/dp/B0CCXT4QZR?tag=schiesslestor-20',
+    badge: null,
+    published: true,
+    sortOrder: 50,
+  },
+];

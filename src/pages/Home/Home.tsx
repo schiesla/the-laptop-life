@@ -80,7 +80,7 @@ export default function Home() {
                     <p>{p.description}</p>
                     <div className="product-footer">
                       <span className="price">{p.price}</span>
-                      <a href={p.affiliateUrl ?? undefined} className="btn btn-primary btn-sm" rel="noopener noreferrer">
+                      <a href={p.affiliateUrl ?? undefined} className="btn btn-primary btn-sm" target="_blank" rel="nofollow sponsored noopener noreferrer">
                         View Deal →
                       </a>
                     </div>
@@ -109,7 +109,15 @@ export default function Home() {
               {latestPosts.map((post) => (
                 <Link to={`/blog/${post.slug}`} key={post.id} className="card-link">
                   <article className="blog-card">
-                    <div className="blog-card-img-placeholder">{post.emoji}</div>
+                    {post.image ? (
+                      <img
+                        src={post.image}
+                        alt={post.imageAlt ?? post.title}
+                        className="blog-card-img"
+                      />
+                    ) : (
+                      <div className="blog-card-img-placeholder">{post.emoji}</div>
+                    )}
                     <div className="blog-card-body">
                       <div className="blog-meta">
                         <span>{post.category}</span>

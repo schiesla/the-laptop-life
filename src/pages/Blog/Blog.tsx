@@ -34,7 +34,15 @@ export default function Blog() {
             {posts.map((post) => (
               <Link to={`/blog/${post.slug}`} key={post.id} className="card-link">
                 <article className="blog-card">
-                  <div className="blog-card-img-placeholder">{post.emoji}</div>
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post.imageAlt ?? post.title}
+                      className="blog-card-img"
+                    />
+                  ) : (
+                    <div className="blog-card-img-placeholder">{post.emoji}</div>
+                  )}
                   <div className="blog-card-body">
                     <div className="blog-meta">
                       <span>{post.category}</span>

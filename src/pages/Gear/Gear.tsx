@@ -62,7 +62,8 @@ export default function Gear() {
                     <a
                       href={p.affiliateUrl ?? undefined}
                       className="btn btn-primary btn-sm"
-                      rel="noopener noreferrer"
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
                     >
                       View Deal →
                     </a>
