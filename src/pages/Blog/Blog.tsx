@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
-import { posts } from '../../data/posts';
+import { usePosts } from '../../hooks/usePosts';
 import './Blog.css';
 
 export default function Blog() {
+  const { posts, loading } = usePosts();
+
   return (
     <div>
       <SEO
@@ -23,11 +25,24 @@ export default function Blog() {
 
       <section className="section">
         <div className="container">
+          {loading ? (
+            <div className="grid-2">
+              {[1, 2, 3].map((n) => <div key={n} className="blog-card skeleton" style={{ minHeight: 280 }} />)}
+            </div>
+          ) : (
           <div className="grid-2">
             {posts.map((post) => (
-              <Link to={`/blog/${post.slug}`} key={post.slug} className="card-link">
+              <Link to={`/blog/${post.slug}`} key={post.id} className="card-link">
                 <article className="blog-card">
-                  <div className="blog-card-img-placeholder">{post.emoji}</div>
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post.imageAlt ?? post.title}
+                      className="blog-card-img"
+                    />
+                  ) : (
+                    <div className="blog-card-img-placeholder">{post.emoji}</div>
+                  )}
                   <div className="blog-card-body">
                     <div className="blog-meta">
                       <span>{post.category}</span>
@@ -42,6 +57,7 @@ export default function Blog() {
               </Link>
             ))}
           </div>
+          )}
         </div>
       </section>
     </div>

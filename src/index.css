@@ -125,11 +125,26 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   font-size: 2.5rem;
 }
+.blog-card-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
 .blog-card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
 .blog-meta { font-size: 0.78rem; color: var(--gray-400); margin-bottom: 0.5rem; display: flex; gap: 0.75rem; }
 .blog-card-body h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.35; }
 .blog-card-body p { color: var(--gray-600); font-size: 0.88rem; flex: 1; }
 .read-more { display: inline-block; margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--accent-dark); }
+
+/* Skeleton loading */
+@keyframes shimmer { from { background-position: -400px 0; } to { background-position: 400px 0; } }
+.skeleton {
+  background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 50%, var(--gray-100) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 12px;
+}
 
 @keyframes fadeup { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
 .toast {

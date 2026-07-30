@@ -1,0 +1,6 @@
+.terms-page { max-width: 740px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+.terms-page h1 { font-weight: 900; font-size: 2rem; margin-bottom: 0.5rem; }
+.terms-page .updated { color: var(--gray-400); margin-bottom: 2rem; }
+
+.terms-body { color: var(--gray-600); line-height: 1.8; }
+.terms-body h2 { font-weight: 800; font-size: 1.2rem; margin: 2rem 0 0.5rem; color: var(--black); }

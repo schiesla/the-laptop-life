@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import SEO from '../../components/SEO/SEO';
-import { products } from '../../data/products';
+import { useProducts } from '../../hooks/useProducts';
 import './Gear.css';
 
-const categories = ['All', ...new Set(products.map((p) => p.category))];
-
 export default function Gear() {
+  const { products, loading } = useProducts();
   const [active, setActive] = useState('All');
+  const categories = ['All', ...new Set(products.map((p) => p.category).filter((c): c is string => c != null))];
   const filtered = active === 'All' ? products : products.filter((p) => p.category === active);
 
   return (
     <div>
       <SEO
         title="Best Mobile Work Gear"
-        description="Hand-picked laptops, stands, chargers, keyboards, and accessories for remote workers who work from anywhere. Tested in real cafes and co-working spaces."
+        description="Hand-picked laptops, stands, chargers, keyboards, and accessories for remote workers who work from anywhere."
         path="/gear"
       />
       {/* Page header */}
@@ -22,7 +22,7 @@ export default function Gear() {
           <p className="section-label">Hand-picked gear</p>
           <h1 className="section-title">The Mobile Worker's Toolkit</h1>
           <p className="gear-header-sub">
-            Everything here has been tested in cafes, co-working spaces, and living rooms.
+            Everything here is chosen for people working from cafes, co-working spaces, and living rooms.
             Affiliate links help us keep the lights on — at no extra cost to you.
           </p>
         </div>
@@ -43,6 +43,11 @@ export default function Gear() {
             ))}
           </div>
 
+          {loading ? (
+            <div className="grid-3">
+              {[1, 2, 3, 4, 5, 6].map((n) => <div key={n} className="product-card skeleton" style={{ minHeight: 320 }} />)}
+            </div>
+          ) : (
           <div className="grid-3">
             {filtered.map((p) => (
               <div className="product-card" key={p.id}>
@@ -55,9 +60,10 @@ export default function Gear() {
                   <div className="product-footer">
                     <span className="price">{p.price}</span>
                     <a
-                      href={p.affiliateUrl}
+                      href={p.affiliateUrl ?? undefined}
                       className="btn btn-primary btn-sm"
-                      rel="noopener noreferrer"
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
                     >
                       View Deal →
                     </a>
@@ -66,6 +72,7 @@ export default function Gear() {
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
     </div>
