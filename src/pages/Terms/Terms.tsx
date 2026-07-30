@@ -23,7 +23,7 @@ export default function Terms() {
         <p>Links take you to third-party retailers whose own terms and privacy policies apply once you leave this site. We don't control and aren't responsible for their content or practices.</p>
 
         <h2>Content ownership</h2>
-        <p>The text, images, and design on this site belong to The Laptop Life unless otherwise noted, and may not be reproduced without permission.</p>
+        <p>The text and design on this site belong to The Laptop Life unless otherwise noted, and may not be reproduced without permission. Photography on this site is sourced from third-party stock providers (such as Unsplash) under their respective licenses and remains the property of the original photographer — it is not owned by The Laptop Life.</p>
 
         <h2>Changes to these terms</h2>
         <p>We may update these terms as the site grows. Continued use of the site after changes means you accept the updated terms.</p>
