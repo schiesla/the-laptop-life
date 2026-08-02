@@ -12,6 +12,9 @@
   --gray-400: #a1a1aa;
   --gray-600: #52525b;
   --gray-800: #27272a;
+  --success: #16a34a;
+  --error: #dc2626;
+  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.10);
   --radius: 8px;
   --max-w: 1100px;
 }
@@ -88,7 +91,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   transition: box-shadow 0.2s, transform 0.2s;
 }
-.product-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.10); transform: translateY(-2px); }
+.product-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
 .product-img-placeholder {
   width: 100%;
   aspect-ratio: 4/3;
@@ -115,7 +118,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
 }
-.blog-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.10); transform: translateY(-2px); }
+.blog-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
 .blog-card-img-placeholder {
   width: 100%;
   aspect-ratio: 16/9;

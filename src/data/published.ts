@@ -14,6 +14,105 @@ import type { ContentPost, ContentProduct } from './contentTypes';
 
 export const publishedPosts: ContentPost[] = [
   {
+    slug: 'power-bank-capacity-explained-mah-vs-wh',
+    title: "Power Bank Capacity Explained: mAh vs. Wh, and What You Can Actually Charge",
+    excerpt: "A 20,000mAh power bank sounds like it should charge your phone five times over — until it doesn't. Here's what capacity numbers actually mean, and how to pick the right one.",
+    category: 'Power',
+    date: 'July 30, 2026',
+    readTime: '8 min read',
+    emoji: '🔋',
+    image: 'https://images.unsplash.com/photo-1706275399494-fb26bbc5da63?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    imageAlt: 'A silver portable power bank on a white table',
+    published: true,
+    sortOrder: 50,
+    body: `
+      <p class="post-disclosure"><em>This post contains affiliate links. If you buy through one, we may earn a commission at no extra cost to you.</em></p>
+
+      <h2>🔋 Why "mAh" Is a Marketing Number, Not a Useful One</h2>
+      <p>Milliamp-hours (mAh) measure electric charge, not energy — and charge alone doesn't tell you how much a battery can actually power. A power bank's mAh rating is measured at the battery cell's own voltage (typically 3.6–3.7V for lithium-ion), but it outputs power to your devices at USB voltages (5V, 9V, 15V, 20V). Comparing mAh numbers across products only works if they're built on the same cell voltage — which manufacturers rarely disclose clearly.</p>
+
+      <h2>⚡ The Real Unit: Watt-Hours (Wh)</h2>
+      <p>Watt-hours measure actual stored energy, and they're the number that lets you compare battery packs, phone batteries, and laptop batteries on equal footing. The formula is simple:</p>
+      <p><strong>Wh = (mAh ÷ 1000) × V</strong></p>
+      <p>A "20,000mAh" power bank built on a 3.7V cell stores about 74Wh — regardless of what voltage it outputs to your devices. This is also the number airlines actually regulate (more on that below), and the one worth checking before comparing two packs with similar mAh ratings but different actual capacity.</p>
+      <p>Worth separating from Wh here, since the two look similar but measure different things: Wh describes how much energy a pack stores, while W (watts) describes how fast it can actually deliver that energy to a device. A power bank can have huge Wh capacity and still charge things slowly if its W rating is weak. See our <a href="/blog/fast-charging-explained-how-to-choose-a-brick">guide to fast-charging wattage</a> for how to read a W rating on a charger or power bank.</p>
+
+      <h2>📉 Why Your Power Bank "Loses" Capacity</h2>
+      <p>Converting the battery's internal voltage up to USB output voltages isn't lossless — expect roughly 80–85% real-world efficiency. That "74Wh" pack delivers closer to 60–63Wh to your devices in practice. This is normal and true of every power bank on the market, not a defect — it's why a 20,000mAh pack won't literally give you "four full charges" of a 5,000mAh phone; the math looks close on paper but the conversion loss eats into it.</p>
+
+      <h2>✈️ The Airline Rule That Actually Matters</h2>
+      <p>The FAA and TSA regulate power banks by watt-hours, not mAh, and the thresholds are strict:</p>
+      <table class="post-table">
+        <thead>
+          <tr><th>Capacity</th><th>Rule</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Up to 100Wh</td><td>Allowed in carry-on, no quantity limit</td></tr>
+          <tr><td>100–160Wh</td><td>Requires airline approval, max 2 per passenger</td></tr>
+          <tr><td>Over 160Wh</td><td>Prohibited on commercial flights entirely</td></tr>
+        </tbody>
+      </table>
+      <p>Power banks must always travel in carry-on luggage, never checked bags, regardless of capacity. This is also why most travel-oriented power banks top out around 25,000–27,000mAh (roughly 90–99Wh at typical cell voltages) — manufacturers deliberately stay under the 100Wh line so the product needs no special approval to fly.</p>
+
+      <h2>🔢 How Much Capacity Do You Actually Need?</h2>
+      <p>Match capacity to what you're actually trying to recharge, accounting for that ~80–85% real-world efficiency:</p>
+      <table class="post-table">
+        <thead>
+          <tr><th>Device</th><th>Typical battery size</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Phone</td><td>~12–17Wh</td></tr>
+          <tr><td>Tablet</td><td>~30–40Wh</td></tr>
+          <tr><td>13" ultrabook</td><td>~50–60Wh</td></tr>
+          <tr><td>16" MacBook Pro-class laptop</td><td>~95–100Wh</td></tr>
+        </tbody>
+      </table>
+      <p>A 10,000mAh pack (~37Wh, ~31Wh usable) is good for roughly two phone charges. A 20,000mAh pack (~74Wh, ~60–63Wh usable) covers a phone several times over or one tablet with room to spare. A 25,000mAh pack (~92Wh, ~78Wh usable) can take a 13" ultrabook to a full charge, or get a 16" MacBook Pro-class laptop most of the way there — remember that a laptop-class battery is itself close to the 100Wh airline limit, so a power bank can never fully out-charge one and stay travel-legal.</p>
+
+      <h2>💰 Picks at Every Capacity Tier</h2>
+      <table class="post-table">
+        <thead>
+          <tr><th>Tier</th><th>Capacity</th><th>Good for</th><th>Typical price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Budget</td><td>10,000mAh (~37Wh)</td><td>Phone only, light travel</td><td>~$50</td></tr>
+          <tr><td>Everyday</td><td>20,000mAh (~74Wh)</td><td>Phone + tablet, multi-day</td><td>~$60</td></tr>
+          <tr><td>Laptop-capable</td><td>25,000mAh (~92Wh)</td><td>Laptop, flight-ready, under the 100Wh line</td><td>~$120</td></tr>
+        </tbody>
+      </table>
+
+      <div class="affiliate-box">
+        <strong>💵 Budget: Anker Nano Power Bank, 10,000mAh</strong>
+        Built-in USB-C cable, compact enough for daily carry — good for topping off a phone on the go, not laptop-capable.
+        <br/><a href="https://www.amazon.com/dp/B0C9CJKCH3?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>⚖️ Everyday: Anker 20,000mAh Travel Essential</strong>
+        A comfortable multi-day capacity for a phone and tablet without pushing into airline-approval territory.
+        <br/><a href="https://www.amazon.com/dp/B0CXDXP8VR?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>🧳 Laptop-capable: Anker 25,000mAh Laptop Power Bank, 165W</strong>
+        Rated for laptop charging with 100W max per port, built-in retractable cables, and flight-ready capacity that stays under the 100Wh threshold.
+        <br/><a href="https://www.amazon.com/dp/B0DCBB2YTR?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <h2>✅ A Practical Buying Checklist</h2>
+      <ul>
+        <li><strong>Convert mAh to Wh</strong> before comparing two packs — the formula is (mAh ÷ 1000) × cell voltage, and most brands list Wh directly on the spec sheet if you look.</li>
+        <li><strong>Expect ~80–85% real-world efficiency</strong> — a pack's rated capacity is never what actually reaches your device.</li>
+        <li><strong>Check the Wh rating against airline limits</strong> if you'll ever fly with it — 100Wh is the line that matters, not any particular mAh number.</li>
+        <li><strong>Capacity and output wattage are separate specs</strong> — a huge pack with a weak port still charges slowly.</li>
+        <li><strong>Match capacity to your actual device</strong>, not the biggest number available — extra capacity you never use is just extra weight in your bag.</li>
+      </ul>
+
+      <h2>🎯 The Bottom Line</h2>
+      <p>Ignore the mAh number on the box and look for Wh — it's the one figure that lets you compare packs honestly, predict airline compliance, and estimate real-world charges. Everything else on the spec sheet, including the giant mAh figure manufacturers lead with, is secondary.</p>
+    `,
+  },
+  {
     slug: 'fast-charging-explained-how-to-choose-a-brick',
     title: "Fast Charging, Explained: How to Actually Choose a Charging Brick",
     excerpt: "USB-PD, PPS, GaN, EPR — the spec sheet on a charging brick reads like alphabet soup. Here's what each term actually means and how to figure out the wattage and features you really need.",
@@ -179,5 +278,38 @@ export const publishedProducts: ContentProduct[] = [
     badge: null,
     published: true,
     sortOrder: 50,
+  },
+  {
+    name: 'UGREEN Nexode 65W GaN Charger',
+    category: 'Power',
+    price: '$27.99',
+    description: 'A compact 3-port GaN charger covering most phones, tablets, and ultrabooks at 65W — a lower-priced alternative to the Anker 67W pick above.',
+    emoji: '⚡',
+    affiliateUrl: 'https://www.amazon.com/dp/B091BGMKYS?tag=schiesslestor-20',
+    badge: null,
+    published: true,
+    sortOrder: 60,
+  },
+  {
+    name: 'UGREEN Nexode Pro 100W GaN Charger, 3-Port',
+    category: 'Power',
+    price: '$59.99',
+    description: 'Full-speed laptop charging with PPS support and two more ports for a phone and tablet — a direct alternative to the Anker 100W pick above.',
+    emoji: '⚡',
+    affiliateUrl: 'https://www.amazon.com/dp/B0CCVQB7MY?tag=schiesslestor-20',
+    badge: null,
+    published: true,
+    sortOrder: 70,
+  },
+  {
+    name: 'Belkin USB-C to USB-C 240W Cable, 2-Pack',
+    category: 'Cables',
+    price: '$22.10',
+    description: 'Rated for the full 240W EPR ceiling like the Anker pick above, in a 2-pack — an alternative-brand option if you want a spare on hand.',
+    emoji: '🔌',
+    affiliateUrl: 'https://www.amazon.com/dp/B0F643KWGQ?tag=schiesslestor-20',
+    badge: null,
+    published: true,
+    sortOrder: 80,
   },
 ];
