@@ -19,6 +19,8 @@
 .blog-post .post-body p { margin-bottom: 1.25rem; color: var(--gray-600); }
 .blog-post .post-body ul, .blog-post .post-body ol { margin: 0 0 1.25rem 1.5rem; color: var(--gray-600); }
 .blog-post .post-body li { margin-bottom: 0.4rem; }
+.blog-post .post-body a { color: var(--accent-dark); text-decoration: underline; }
+.blog-post .post-body a:hover { color: var(--accent); }
 
 .post-hero-img {
   width: 100%;
@@ -43,7 +45,7 @@
 .post-table th, .post-table td {
   text-align: left;
   padding: 0.6rem 0.9rem;
-  border-bottom: 1px solid var(--gray-200, #e5e5e5);
+  border-bottom: 1px solid var(--gray-200);
 }
 .post-table th {
   font-weight: 700;

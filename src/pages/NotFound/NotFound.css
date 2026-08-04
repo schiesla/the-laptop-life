@@ -1,0 +1,12 @@
+.not-found-header {
+  background: var(--black);
+  color: var(--white);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.not-found-header .container { max-width: 560px; }
+.not-found-header .section-title { color: var(--white); }
+.not-found-sub { color: var(--gray-400); font-size: 1.05rem; margin-bottom: 2rem; }
+.not-found-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }

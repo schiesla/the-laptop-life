@@ -12,4 +12,4 @@
 }
 .email-form input:focus { border-color: var(--accent); }
 
-.success-msg { color: #16a34a; font-weight: 600; font-size: 0.95rem; margin-top: 0.5rem; }
+.success-msg { color: var(--success); font-weight: 600; font-size: 0.95rem; margin-top: 0.5rem; }

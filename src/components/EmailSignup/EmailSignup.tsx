@@ -67,7 +67,7 @@ export default function EmailSignup({ source = 'unknown' }: EmailSignupProps) {
         </button>
       </form>
       {status === 'error' && (
-        <p style={{ color: '#dc2626', fontSize: '0.85rem', marginTop: '0.5rem' }}>
+        <p style={{ color: 'var(--error)', fontSize: '0.85rem', marginTop: '0.5rem' }}>
           Something went wrong — please try again.
         </p>
       )}
