@@ -10,6 +10,7 @@ import About from './pages/About/About';
 import Privacy from './pages/Privacy/Privacy';
 import Terms from './pages/Terms/Terms';
 import Preview, { PreviewIndex } from './pages/Preview/Preview';
+import NotFound from './pages/NotFound/NotFound';
 import useEnvVariables from './hooks/useEnvVariables';
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/terms" element={<Terms />} />
           {import.meta.env.DEV && <Route path="/preview" element={<PreviewIndex />} />}
           {import.meta.env.DEV && <Route path="/preview/:slug" element={<Preview />} />}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
