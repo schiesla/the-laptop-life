@@ -30,6 +30,7 @@ export default function BlogPost() {
         path={`/blog/${post.slug}`}
         type="article"
         image={post.image ?? undefined}
+        datePublished={post.date ?? undefined}
       />
       <div className="post-header">
         <div className="container">

@@ -11,6 +11,7 @@ interface SEOProps {
   path?: string;
   type?: string;
   image?: string;
+  datePublished?: string;
 }
 
 const organizationJsonLd = {
@@ -28,10 +29,26 @@ const websiteJsonLd = {
   url: DOMAIN,
 };
 
-export default function SEO({ title, description, path = '', type = 'website', image }: SEOProps) {
+export default function SEO({ title, description, path = '', type = 'website', image, datePublished }: SEOProps) {
   const fullTitle = title ? `${title} | ${SITE}` : `${SITE} — When anywhere is your office`;
   const desc = description || DEFAULT_DESC;
   const canonical = `${DOMAIN}${path}`;
+
+  const articleJsonLd = type === 'article' && title && datePublished ? {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: desc,
+    ...(image && { image: [image] }),
+    datePublished: new Date(datePublished).toISOString(),
+    author: { '@type': 'Organization', name: SITE, url: DOMAIN },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE,
+      logo: { '@type': 'ImageObject', url: `${DOMAIN}/favicon.png` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  } : null;
 
   return (
     <Helmet>
@@ -50,6 +67,7 @@ export default function SEO({ title, description, path = '', type = 'website', i
       {image && <meta name="twitter:image" content={image} />}
       <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
       <script type="application/ld+json">{JSON.stringify(websiteJsonLd)}</script>
+      {articleJsonLd && <script type="application/ld+json">{JSON.stringify(articleJsonLd)}</script>}
     </Helmet>
   );
 }
