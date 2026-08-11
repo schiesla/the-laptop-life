@@ -13,6 +13,21 @@ interface SEOProps {
   image?: string;
 }
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE,
+  url: DOMAIN,
+  logo: `${DOMAIN}/favicon.png`,
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE,
+  url: DOMAIN,
+};
+
 export default function SEO({ title, description, path = '', type = 'website', image }: SEOProps) {
   const fullTitle = title ? `${title} | ${SITE}` : `${SITE} — When anywhere is your office`;
   const desc = description || DEFAULT_DESC;
@@ -33,6 +48,8 @@ export default function SEO({ title, description, path = '', type = 'website', i
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={desc} />
       {image && <meta name="twitter:image" content={image} />}
+      <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(websiteJsonLd)}</script>
     </Helmet>
   );
 }
