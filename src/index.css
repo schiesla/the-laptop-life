@@ -1,166 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+/* ─────────────────────────────────────────────────────────────────────────────
+   The Laptop Life — drop-in replacement for src/index.css
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+   HOW TO USE
+   1. Copy `styles.css` and the `tokens/` folder from this design system into `src/`.
+   2. Replace the entire contents of your `src/index.css` with this file.
+   3. Delete nothing else. Every class name and CSS variable your pages already
+      reference still exists — they just resolve to the new brand.
 
-:root {
-  --black: #0a0a0a;
-  --white: #ffffff;
-  --accent: #f5a623;
-  --accent-dark: #d4891a;
-  --gray-100: #f4f4f5;
-  --gray-200: #e4e4e7;
-  --gray-400: #a1a1aa;
-  --gray-600: #52525b;
-  --gray-800: #27272a;
-  --success: #16a34a;
-  --error: #dc2626;
-  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.10);
-  --radius: 8px;
-  --max-w: 1100px;
-}
+   WHY THIS WORKS
+   Your old index.css declared the tokens AND the utility classes used across
+   every page (.btn, .section-title, .product-card, .blog-card, .toast…).
+   This file keeps every one of those selectors and every legacy variable name,
+   repointed at the new design system. No .tsx changes required.
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--white);
-  color: var(--black);
-  line-height: 1.6;
-}
+   AFTER IT'S IN
+   Migrate opportunistically: as you touch a page, swap `var(--accent)` for
+   `var(--ember-500)`, `.section-title` for the real type tokens, and so on.
+   The LEGACY ALIASES block at the bottom is the only thing you ever delete,
+   and only once nothing references those names.
+   ───────────────────────────────────────────────────────────────────────────── */
 
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
+@import url("./styles.css");
 
-.container {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius);
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-  transition: background 0.2s, transform 0.1s;
-}
+body{font-family:var(--font-sans);background:var(--surface-page);color:var(--text-strong);line-height:var(--body-leading);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--text-link-hover)}
+img{max-width:100%;display:block}
+::selection{background:var(--ember-200);color:var(--ink-900)}
+:focus-visible{outline:none;box-shadow:var(--focus-ring)}
 
-.btn:active { transform: scale(0.98); }
-.btn-primary { background: var(--accent); color: var(--black); }
-.btn-primary:hover { background: var(--accent-dark); }
-.btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
-.btn-outline:hover { background: rgba(255,255,255,0.1); }
-.btn-sm { padding: 0.5rem 1rem; font-size: 0.85rem; }
+.container{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter)}
 
-/* Link wrapper that lets a card grid item stay clickable without affecting grid layout */
-.card-link { display: contents; }
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:.9375rem;line-height:1;padding:12px 22px;border:1px solid transparent;border-radius:var(--radius-s);cursor:pointer;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+.btn:active{transform:none}
+.btn-primary{background:var(--ember-500);color:var(--paper-000);border-color:var(--ember-500)}
+.btn-primary:hover{background:var(--ember-400);border-color:var(--ember-400)}
+.btn-outline{background:transparent;color:var(--paper-100);border:1px solid var(--ink-500)}
+.btn-outline:hover{background:var(--paper-100);color:var(--ink-900);border-color:var(--paper-100)}
+.btn-sm{padding:8px 14px;font-size:.8125rem}
 
-/* Sections */
-.section { padding: 5rem 0; }
-.section-alt { background: var(--gray-100); }
+.card-link{display:contents}
 
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-}
+/* ── Sections ────────────────────────────────────────────────────────────── */
+.section{padding:var(--section-y) 0}
+.section-alt{background:var(--surface-sunken)}
+.section-label{font-family:var(--font-mono);font-size:var(--eyebrow-size);font-weight:var(--eyebrow-weight);text-transform:uppercase;letter-spacing:var(--eyebrow-tracking);color:var(--text-accent);margin-bottom:14px}
+.section-title{font-family:var(--font-display);font-size:var(--display-m);font-weight:var(--display-weight);line-height:var(--display-leading);letter-spacing:var(--display-tracking);color:var(--text-strong);margin-bottom:16px;text-wrap:balance}
+.section-sub{color:var(--text-body);font-size:var(--body-m);max-width:52ch;text-wrap:pretty}
 
-.section-title {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: -0.5px;
-  margin-bottom: 1rem;
-}
+/* Dark sections: the hero, page headers, and the newsletter band */
+.section-dark{background:var(--surface-inverse);color:var(--text-on-inverse)}
+.section-dark .section-title{color:var(--text-on-inverse)}
+.section-dark .section-sub{color:var(--text-on-inverse-muted)}
+.section-dark .section-label{color:var(--ember-400)}
 
-.section-sub { color: var(--gray-600); font-size: 1.05rem; max-width: 560px; }
+/* ── Grids ───────────────────────────────────────────────────────────────── */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-5);margin-top:var(--space-7)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:var(--space-5);margin-top:var(--space-7)}
 
-/* Grids */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+/* ── Product card ────────────────────────────────────────────────────────── */
+.product-card{background:var(--surface-card);border:var(--border-hairline);border-radius:var(--radius-m);overflow:hidden;transition:box-shadow var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out)}
+.product-card:hover{box-shadow:var(--shadow-card-hover);border-color:var(--paper-400);transform:none}
+/* Type-led product wells are the designed state, not a fallback — see readme */
+.product-img-placeholder{width:100%;aspect-ratio:4/3;background:var(--surface-sunken);border-bottom:var(--border-hairline);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:var(--mono-s);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-200)}
+.product-body{padding:20px;display:flex;flex-direction:column;gap:10px}
+.product-tag{font-family:var(--font-mono);font-size:var(--mono-s);font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--text-muted);margin-bottom:0;}
+.product-body h3{font-family:var(--font-display);font-size:1.25rem;font-weight:400;line-height:1.15;letter-spacing:-.015em;color:var(--text-strong);margin-bottom:0}
+.product-body p{color:var(--text-body);font-size:var(--body-s);line-height:1.55;margin-bottom:0;text-wrap:pretty}
+.product-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;border-top:var(--border-hairline)}
+.price{font-family:var(--font-mono);font-size:1rem;font-weight:500;color:var(--text-strong)}
 
-/* Product card */
-.product-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.product-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-.product-img-placeholder {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background: var(--gray-100);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-}
-.product-body { padding: 1.25rem; }
-.product-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-dark); margin-bottom: 0.4rem; }
-.product-body h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
-.product-body p { color: var(--gray-600); font-size: 0.875rem; margin-bottom: 1rem; }
-.product-footer { display: flex; align-items: center; justify-content: space-between; }
-.price { font-weight: 700; font-size: 1.05rem; }
+/* ── Blog card ───────────────────────────────────────────────────────────── */
+.blog-card{background:var(--surface-card);border:var(--border-hairline);border-radius:var(--radius-m);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out)}
+.blog-card:hover{box-shadow:var(--shadow-card-hover);border-color:var(--paper-400);transform:none}
+.blog-card-img-placeholder{width:100%;aspect-ratio:16/9;background:var(--ink-800);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:var(--mono-s);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-500)}
+.blog-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:saturate(.9)}
+.blog-card-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.blog-meta{font-family:var(--font-mono);font-size:var(--mono-s);letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0;display:flex;gap:14px}
+.blog-card-body h3{font-family:var(--font-display);font-size:1.375rem;font-weight:400;line-height:1.15;letter-spacing:-.015em;color:var(--text-strong);margin-bottom:0;text-wrap:balance}
+.blog-card-body p{color:var(--text-body);font-size:var(--body-s);line-height:1.6;flex:1;text-wrap:pretty}
+.read-more{display:inline-block;margin-top:12px;font-size:var(--body-xs);font-weight:600;color:var(--text-link);border-bottom:1px solid currentColor;padding-bottom:1px;align-self:flex-start}
+.read-more:hover{color:var(--text-link-hover)}
 
-/* Blog card */
-.blog-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s;
-  display: flex;
-  flex-direction: column;
-}
-.blog-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-.blog-card-img-placeholder {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: var(--gray-800);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-}
-.blog-card-img {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  display: block;
-}
-.blog-card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
-.blog-meta { font-size: 0.78rem; color: var(--gray-400); margin-bottom: 0.5rem; display: flex; gap: 0.75rem; }
-.blog-card-body h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.35; }
-.blog-card-body p { color: var(--gray-600); font-size: 0.88rem; flex: 1; }
-.read-more { display: inline-block; margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--accent-dark); }
+/* ── Skeleton ────────────────────────────────────────────────────────────── */
+@keyframes shimmer{from{background-position:-400px 0}to{background-position:400px 0}}
+.skeleton{background:linear-gradient(90deg,var(--paper-200) 25%,var(--paper-300) 50%,var(--paper-200) 75%);background-size:800px 100%;animation:shimmer 1.4s linear infinite;border-radius:var(--radius-m)}
 
-/* Skeleton loading */
-@keyframes shimmer { from { background-position: -400px 0; } to { background-position: 400px 0; } }
-.skeleton {
-  background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 50%, var(--gray-100) 75%);
-  background-size: 800px 100%;
-  animation: shimmer 1.4s infinite;
-  border-radius: 12px;
-}
+/* ── Toast ───────────────────────────────────────────────────────────────── */
+@keyframes fadeup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--surface-inverse-raised);color:var(--text-on-inverse);padding:14px 18px;border-radius:var(--radius-s);font-family:var(--font-sans);font-size:var(--body-s);font-weight:500;animation:fadeup var(--dur-slow) var(--ease-out);z-index:999;border-left:2px solid var(--ember-500);box-shadow:var(--shadow-overlay)}
 
-@keyframes fadeup { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
-.toast {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  background: var(--black);
-  color: var(--white);
-  padding: 0.85rem 1.25rem;
-  border-radius: var(--radius);
-  font-size: 0.9rem;
-  font-weight: 600;
-  animation: fadeup 0.3s ease;
-  z-index: 999;
-  border-left: 4px solid var(--accent);
+/* ─────────────────────────────────────────────────────────────────────────────
+   LEGACY ALIASES — the only block you delete, and only once nothing uses it.
+   Every variable your old stylesheet declared, repointed at the new system.
+   Grep for these names to find what's left to migrate.
+   ───────────────────────────────────────────────────────────────────────────── */
+:root{
+--black:var(--ink-900);
+--white:var(--paper-000);
+--accent:var(--ember-500);
+--accent-dark:var(--ember-600);
+--gray-100:var(--paper-200);
+--gray-200:var(--paper-300);
+--gray-400:var(--ink-300);
+--gray-600:var(--ink-400);
+--gray-800:var(--ink-700);
+--success:var(--moss-500);
+--error:var(--clay-600);
+--shadow-hover:var(--shadow-card-hover);
+--radius:var(--radius-m);
+/* NOTE: --max-w changes 1100px → 1180px, and --gutter replaces the hardcoded
+   1.5rem in .container. Both come from tokens/spacing.css. */
 }

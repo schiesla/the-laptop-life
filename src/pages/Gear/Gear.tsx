@@ -94,8 +94,10 @@ export default function Gear() {
               <div className="product-card" key={p.id}>
                 <div className="product-img-placeholder">{p.emoji}</div>
                 <div className="product-body">
-                  <p className="product-tag">{p.category}</p>
-                  {p.badge && <span className="product-badge">{p.badge}</span>}
+                  <div className="product-tag-group">
+                    <p className="product-tag">{p.category}</p>
+                    {p.badge && <span className="product-badge">{p.badge}</span>}
+                  </div>
                   <h3>{p.name}</h3>
                   <p>{p.description}</p>
                   <div className="product-footer">

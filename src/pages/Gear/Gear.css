@@ -60,3 +60,9 @@
   border-radius: 4px;
   margin-bottom: 0.4rem;
 }
+
+.product-tag-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}

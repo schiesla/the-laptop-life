@@ -14,8 +14,10 @@ nav {
   height: 64px;
 }
 
-.nav-logo { font-size: 1.25rem; font-weight: 900; color: var(--white); letter-spacing: -0.5px; }
-.nav-logo span { color: var(--accent); }
+.nav-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--text-on-inverse); }
+.nav-logo img { display: block; }
+.nav-logo span { font-family: var(--font-display); font-size: 1.1875rem; font-weight: 400; letter-spacing: -0.02em; }
+.nav-logo em { font-style: italic; color: var(--ember-500); }
 
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { color: var(--gray-400); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
