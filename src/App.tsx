@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import UnderConstruction from './components/UnderConstruction/UnderConstruction';
 import Home from './pages/Home/Home';
@@ -12,6 +11,7 @@ import Terms from './pages/Terms/Terms';
 import Preview, { PreviewIndex } from './pages/Preview/Preview';
 import NotFound from './pages/NotFound/NotFound';
 import useEnvVariables from './hooks/useEnvVariables';
+import NavbarLegacy from './components/Navbar/Navbar-legacy';
 
 export default function App() {
   const { UNDER_CONSTRUCTION } = useEnvVariables();
@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <NavbarLegacy />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
