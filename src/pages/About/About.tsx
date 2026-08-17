@@ -15,7 +15,7 @@ export default function About() {
       <div className="about-header">
         <div className="container">
           <p className="section-label">Our story</p>
-          <h1 className="section-title">When anywhere is your office</h1>
+          <h1>When anywhere is your office</h1>
         </div>
       </div>
 

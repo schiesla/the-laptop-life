@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import { usePosts } from '../../hooks/usePosts';
 import './Blog.css';
+import { PostCard } from '../../components/PostCard/PostCard';
 
 export default function Blog() {
   const { posts, loading } = usePosts();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -16,7 +18,7 @@ export default function Blog() {
       <div className="blog-header">
         <div className="container">
           <p className="section-label">Guides & Reviews</p>
-          <h1 className="section-title">The Blog</h1>
+          <h1>The Blog</h1>
           <p className="blog-header-sub">
             In-depth buying guides, setup walkthroughs, and honest gear reviews for the mobile worker.
           </p>
@@ -32,29 +34,21 @@ export default function Blog() {
           ) : (
           <div className="grid-2">
             {posts.map((post) => (
-              <Link to={`/blog/${post.slug}`} key={post.id} className="card-link">
-                <article className="blog-card">
-                  {post.image ? (
-                    <img
-                      src={post.image}
-                      alt={post.imageAlt ?? post.title}
-                      className="blog-card-img"
-                    />
-                  ) : (
-                    <div className="blog-card-img-placeholder">{post.emoji}</div>
-                  )}
-                  <div className="blog-card-body">
-                    <div className="blog-meta">
-                      <span>{post.category}</span>
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                    <h3>{post.title}</h3>
-                    <p>{post.excerpt}</p>
-                    <span className="read-more">Read article →</span>
-                  </div>
-                </article>
-              </Link>
+              <PostCard
+                key={post.id}
+                href={`/blog/${post.slug}`}
+                onClick={(e) => {
+                  if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+                  e.preventDefault();
+                  navigate(`/blog/${post.slug}`);
+                }}
+                title={post.title}
+                excerpt={post.excerpt}
+                category={post.category}
+                date={post.date}
+                readTime={post.readTime}
+                image={post.image}
+              />
             ))}
           </div>
           )}

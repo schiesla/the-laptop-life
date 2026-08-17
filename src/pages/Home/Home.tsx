@@ -1,24 +1,28 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import EmailSignup from '../../components/EmailSignup/EmailSignup';
 import { usePosts } from '../../hooks/usePosts';
 import { useProducts } from '../../hooks/useProducts';
 import useEnvVariables from '../../hooks/useEnvVariables';
 import './Home.css';
+import { FeatureCard } from '../../components/FeatureCard/FeatureCard';
+import { ProductCard } from '../../components/ProductCard/ProductCard';
+import { PostCard } from '../../components/PostCard/PostCard';
 
 const features = [
-  { icon: '☕', title: 'Coffee Shop Ready', description: 'Picks chosen for real cafe conditions, not just spec sheets.' },
-  { icon: '⚡', title: 'Power Independent', description: 'Never hunt for an outlet again. We obsess over battery life and portable charging.' },
-  { icon: '🎒', title: 'One-Bag Setups', description: "Full productivity that fits in the bag you're already carrying." },
-  { icon: '💸', title: 'Honest Affiliate Reviews', description: 'We only recommend gear we’d stand behind. Affiliate links disclosed, always.' },
+  { title: 'Coffee Shop Ready', description: 'Picks chosen for real cafe conditions, not just spec sheets.' },
+  { title: 'Power Independent', description: 'Never hunt for an outlet again. We obsess over battery life and portable charging.' },
+  { title: 'One-Bag Setups', description: "Full productivity that fits in the bag you're already carrying." },
+  { title: 'Honest Affiliate Reviews', description: 'We only recommend gear we’d stand behind. Affiliate links disclosed, always.' },
 ];
 
 export default function Home() {
   const { ENABLE_NEWSLETTER } = useEnvVariables();
   const { posts, loading: postsLoading } = usePosts();
   const { products, loading: productsLoading } = useProducts();
+  const navigate = useNavigate();
   const featuredProducts = products.slice(0, 3);
-  const latestPosts = posts.slice(0, 2);
+  const latestPosts = posts.slice(0, 3);
 
   return (
     <>
@@ -49,13 +53,9 @@ export default function Home() {
             mobile work better.
           </p>
           <div className="grid-3 features-grid">
-            {features.map((f) => (
-              <div className="card" key={f.title}>
-                <div className="card-icon">{f.icon}</div>
-                <h3>{f.title}</h3>
-                <p>{f.description}</p>
-              </div>
-            ))}
+            {features.map((f, i) => (
+                <FeatureCard key={f.title} index={i + 1} title={f.title} description={f.description} />
+              ))}
           </div>
         </div>
       </section>
@@ -67,25 +67,19 @@ export default function Home() {
           <h2 className="section-title">Gear worth a look</h2>
           {productsLoading ? (
             <div className="grid-3">
-              {[1, 2, 3].map((n) => <div key={n} className="product-card skeleton" style={{ minHeight: 320 }} />)}
-            </div>
+              {[1, 2, 3].map((n) => <div key={n} className="skeleton" style={{ minHeight: 280, borderRadius: 'var(--radius-m)' }} />)}            </div>
           ) : (
             <div className="grid-3">
               {featuredProducts.map((p) => (
-                <div className="product-card" key={p.id}>
-                  <div className="product-img-placeholder">{p.emoji}</div>
-                  <div className="product-body">
-                    <p className="product-tag">{p.category}</p>
-                    <h3>{p.name}</h3>
-                    <p>{p.description}</p>
-                    <div className="product-footer">
-                      <span className="price">{p.price}</span>
-                      <a href={p.affiliateUrl ?? undefined} className="btn btn-primary btn-sm" target="_blank" rel="nofollow sponsored noopener noreferrer">
-                        View Deal →
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <ProductCard
+                    key={p.id}
+                    name={p.name}
+                    category={p.category}
+                    price={p.price}
+                    description={p.description}
+                    badge={p.badge}
+                    href={p.affiliateUrl ?? undefined}
+                  />
               ))}
             </div>
           )}
@@ -102,33 +96,25 @@ export default function Home() {
           <h2 className="section-title">Guides worth reading</h2>
           {postsLoading ? (
             <div className="grid-2">
-              {[1, 2].map((n) => <div key={n} className="blog-card skeleton" style={{ minHeight: 280 }} />)}
-            </div>
+              {[1, 2, 3].map((n) => <div key={n} className="skeleton" style={{ minHeight: 280, borderRadius: 'var(--radius-m)' }} />)}            </div>
           ) : (
             <div className="grid-2">
               {latestPosts.map((post) => (
-                <Link to={`/blog/${post.slug}`} key={post.id} className="card-link">
-                  <article className="blog-card">
-                    {post.image ? (
-                      <img
-                        src={post.image}
-                        alt={post.imageAlt ?? post.title}
-                        className="blog-card-img"
-                      />
-                    ) : (
-                      <div className="blog-card-img-placeholder">{post.emoji}</div>
-                    )}
-                    <div className="blog-card-body">
-                      <div className="blog-meta">
-                        <span>{post.category}</span>
-                        <span>{post.readTime}</span>
-                      </div>
-                      <h3>{post.title}</h3>
-                      <p>{post.excerpt}</p>
-                      <span className="read-more">Read article →</span>
-                    </div>
-                  </article>
-                </Link>
+                <PostCard
+                  key={post.id}
+                  href={`/blog/${post.slug}`}
+                  onClick={(e) => {
+                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+                    e.preventDefault();
+                    navigate(`/blog/${post.slug}`);
+                  }}
+                  title={post.title}
+                  excerpt={post.excerpt}
+                  category={post.category}
+                  date={post.date}
+                  readTime={post.readTime}
+                  image={post.image}
+                />
               ))}
             </div>
           )}
