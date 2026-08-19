@@ -11,7 +11,7 @@ import Terms from './pages/Terms/Terms';
 import Preview, { PreviewIndex } from './pages/Preview/Preview';
 import NotFound from './pages/NotFound/NotFound';
 import useEnvVariables from './hooks/useEnvVariables';
-import NavbarLegacy from './components/Navbar/Navbar-legacy';
+import Navbar from './components/Navbar/Navbar';
 
 export default function App() {
   const { UNDER_CONSTRUCTION } = useEnvVariables();
@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <NavbarLegacy />
+      <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

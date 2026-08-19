@@ -20,10 +20,8 @@ nav {
 .nav-logo em { font-style: italic; color: var(--ember-500); }
 
 .nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a { color: var(--gray-400); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--white); }
-.nav-links a{padding-bottom:3px;border-bottom:1px solid transparent;color:var(--ink-200)}
-.nav-links a.active{color:var(--paper-100);border-bottom-color:var(--ember-500)}
+.nav-links a {padding-bottom:3px;border-bottom:1px solid transparent;color:var(--ink-200)}
+.nav-links a.active {color:var(--paper-100);border-bottom-color:var(--ember-500)}
 
 @media (max-width: 640px) {
   .nav-links { gap: 1rem; }

@@ -5,7 +5,7 @@
 
 .hero h1 span { color: var(--ember-500); font-style: italic; }
 
-.hero p { font-size: var(--lead-size); line-height: var(--lead-leading); color: var(--text-on-inverse-muted); max-width: 56ch; margin: 0 auto 40px; text-wrap: pretty; }
+.hero p { font-size: var(--lead-size); line-height: var(--lead-leading); color: var(--text-on-inverse-muted); max-width: 56ch; margin: 0 0 40px; text-wrap: pretty; }
 
 .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 .hero-cta .btn.btn-primary { color: var(--text-on-accent); }

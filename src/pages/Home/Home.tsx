@@ -69,7 +69,7 @@ export default function Home() {
           <h2 className="section-title">Gear worth a look</h2>
           {productsLoading ? (
             <div className="grid-3">
-              {[1, 2, 3].map((n) => <Skeleton key={n} style={{ minHeight: 280, borderRadius: 'var(--radius-m)' }} />)}
+              {[1, 2, 3].map((n) => <Skeleton key={n} height={280} style={{ borderRadius: 'var(--radius-m)' }} />)}
             </div>
           ) : (
             <div className="grid-3">
@@ -99,7 +99,7 @@ export default function Home() {
           <h2 className="section-title">Guides worth reading</h2>
           {postsLoading ? (
             <div className="grid-2">
-              {[1, 2, 3].map((n) => <Skeleton key={n} style={{ minHeight: 280, borderRadius: 'var(--radius-m)' }} />)}            </div>
+              {[1, 2, 3].map((n) => <Skeleton key={n} height={280} style={{ borderRadius: 'var(--radius-m)' }} />)}            </div>
           ) : (
             <div className="grid-2">
               {latestPosts.map((post) => (

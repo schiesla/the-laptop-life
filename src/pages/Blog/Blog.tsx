@@ -31,7 +31,7 @@ export default function Blog() {
         <div className="container">
           {loading ? (
             <div className="grid-2">
-              {[1, 2, 3].map((n) => <Skeleton key={n} style={{ minHeight: 280 }} />)}
+              {[1, 2, 3].map((n) => <Skeleton key={n} height={280}/>)}
             </div>
           ) : (
           <div className="grid-2">

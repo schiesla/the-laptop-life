@@ -64,7 +64,7 @@ export default function Gear() {
           <div className="gear-controls">
             <div className="category-filter">
               {categories.map((cat) => (
-                <CategoryPill key={cat} active={active === cat} onClick={() => setActive(cat)} children={cat} />
+                <CategoryPill key={cat} active={active === cat} onClick={() => setActive(cat)}>{cat}</CategoryPill>
               ))}
             </div>
             <Select label='Sort by' value={sort} onChange={(e) => setSort(e.target.value as SortOption)} options={[
@@ -77,7 +77,7 @@ export default function Gear() {
 
           {loading ? (
             <div className="grid-3">
-              {[1, 2, 3, 4, 5, 6].map((n) => <Skeleton key={n} style={{ minHeight: 320 }} />)}
+              {[1, 2, 3, 4, 5, 6].map((n) => <Skeleton key={n} height={320} />)}
             </div>
           ) : (
           <div className="grid-3">
