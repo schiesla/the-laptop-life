@@ -3,7 +3,7 @@
 
 .hero h1 { font-family: var(--font-display); font-size: var(--display-xl); font-weight: var(--display-weight); line-height: var(--display-leading); letter-spacing: var(--display-tracking); margin: 0 0 28px; }
 
-.hero h1 span { color: var(--ember-400); font-style: italic; }
+.hero h1 span { color: var(--ember-500); font-style: italic; }
 
 .hero p { font-size: var(--lead-size); line-height: var(--lead-leading); color: var(--text-on-inverse-muted); max-width: 56ch; margin: 0 auto 40px; text-wrap: pretty; }
 
