@@ -2,6 +2,7 @@ import SEO from '../../components/SEO/SEO';
 import EmailSignup from '../../components/EmailSignup/EmailSignup';
 import useEnvVariables from '../../hooks/useEnvVariables';
 import './About.css';
+import { Eyebrow } from '../../components/Eyebrow/Eyebrow';
 
 export default function About() {
   const { ENABLE_NEWSLETTER } = useEnvVariables();
@@ -14,7 +15,7 @@ export default function About() {
       />
       <div className="about-header">
         <div className="container">
-          <p className="section-label">Our story</p>
+           <Eyebrow tone='inverse' style={{marginBottom:16}}>Our Story</Eyebrow>
           <h1>When anywhere is your office</h1>
         </div>
       </div>

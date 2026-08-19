@@ -1,12 +1,11 @@
-/* Footer */
-footer { background: var(--gray-800); color: var(--gray-400); padding: 2.5rem 0; }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-.footer-logo { font-weight: 900; color: var(--white); font-size: 1rem; }
-.footer-logo span { color: var(--accent); }
-.footer-links { display: flex; gap: 1.5rem; list-style: none; font-size: 0.85rem; }
-.footer-links a:hover { color: var(--white); }
-.footer-copy { font-size: 0.8rem; }
+.footer{background:var(--surface-inverse);color:var(--text-on-inverse-muted);border-top:1px solid var(--line-inverse);padding:48px 0 40px}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter);display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;justify-content:space-between}
+.footer ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.footer ul a{font-size:var(--body-xs);color:var(--ink-200);text-decoration:none}
+.footer ul a:hover{color:var(--paper-100)}
+.footer-legal{font-family:var(--font-mono);font-size:var(--mono-s);color:var(--ink-300);margin:0;width:100%;padding-top:28px;border-top:1px solid var(--line-inverse)}
 
-@media (max-width: 640px) {
-  .footer-inner { flex-direction: column; align-items: flex-start; }
-}
+.footer-mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.footer-mark img{display:block}
+.footer-mark span{font-family:var(--font-display);font-size:1rem;font-weight:400;letter-spacing:-0.02em;color:var(--text-on-inverse)}
+.footer-mark em{font-style:italic;color:var(--ember-500)}

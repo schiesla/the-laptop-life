@@ -3,6 +3,10 @@ import SEO from '../../components/SEO/SEO';
 import { useProducts } from '../../hooks/useProducts';
 import './Gear.css';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
+import { CategoryPill } from '../../components/CategoryPill/CategoryPill';
+import { Eyebrow } from '../../components/Eyebrow/Eyebrow';
+import { Select } from '../../components/Select/Select';
+import { Skeleton } from '../../components/Skeleton/Skeleton';
 
 type SortOption = 'featured' | 'name' | 'price-asc' | 'price-desc';
 
@@ -45,7 +49,7 @@ export default function Gear() {
       {/* Page header */}
       <div className="gear-header">
         <div className="container">
-          <p className="section-label">Hand-picked gear</p>
+          <Eyebrow tone='inverse' style={{marginBottom:16}}>Hand-picked gear</Eyebrow>
           <h1>The Mobile Worker's Toolkit</h1>
           <p className="gear-header-sub">
             Everything here is chosen for people working from cafes, co-working spaces, and living rooms.
@@ -60,34 +64,20 @@ export default function Gear() {
           <div className="gear-controls">
             <div className="category-filter">
               {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActive(cat)}
-                  className={`category-btn${active === cat ? ' active' : ''}`}
-                >
-                  {cat}
-                </button>
+                <CategoryPill key={cat} active={active === cat} onClick={() => setActive(cat)} children={cat} />
               ))}
             </div>
-            <label className="sort-select-label">
-              Sort by
-              <select
-                id={"sort-select"}
-                className="sort-select"
-                value={sort}
-                onChange={(e) => setSort(e.target.value as SortOption)}
-              >
-                <option value="featured">Editor's Picks</option>
-                <option value="name">Name (A–Z)</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-              </select>
-            </label>
+            <Select label='Sort by' value={sort} onChange={(e) => setSort(e.target.value as SortOption)} options={[
+              { value: "featured", label: "Editor's Picks" },
+              { value: "name", label: "Name (A–Z)" },
+              { value: "price-asc", label: "Price: Low to High" },
+              { value: "price-desc", label: "Price: High to Low" }
+            ]}/>
           </div>
 
           {loading ? (
             <div className="grid-3">
-              {[1, 2, 3, 4, 5, 6].map((n) => <div key={n} className="product-card skeleton" style={{ minHeight: 320 }} />)}
+              {[1, 2, 3, 4, 5, 6].map((n) => <Skeleton key={n} style={{ minHeight: 320 }} />)}
             </div>
           ) : (
           <div className="grid-3">

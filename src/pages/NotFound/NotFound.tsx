@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import './NotFound.css';
+import { Eyebrow } from '../../components/Eyebrow/Eyebrow';
 
 export default function NotFound() {
   return (
     <div className="not-found-header">
       <SEO title="Page Not Found" path="/404" />
       <div className="container">
-        <p className="section-label">404</p>
+        <Eyebrow>404</Eyebrow>
         <h1 className="section-title">This page doesn't exist</h1>
         <p className="not-found-sub">
           The page you're looking for may have moved or never existed. Try one of these instead.

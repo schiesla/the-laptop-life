@@ -3,6 +3,8 @@ import SEO from '../../components/SEO/SEO';
 import { usePosts } from '../../hooks/usePosts';
 import './Blog.css';
 import { PostCard } from '../../components/PostCard/PostCard';
+import { Eyebrow } from '../../components/Eyebrow/Eyebrow';
+import { Skeleton } from '../../components/Skeleton/Skeleton';
 
 export default function Blog() {
   const { posts, loading } = usePosts();
@@ -17,7 +19,7 @@ export default function Blog() {
       />
       <div className="blog-header">
         <div className="container">
-          <p className="section-label">Guides & Reviews</p>
+          <Eyebrow tone='inverse' style={{marginBottom:16}}>Guides & Reviews</Eyebrow>
           <h1>The Blog</h1>
           <p className="blog-header-sub">
             In-depth buying guides, setup walkthroughs, and honest gear reviews for the mobile worker.
@@ -29,7 +31,7 @@ export default function Blog() {
         <div className="container">
           {loading ? (
             <div className="grid-2">
-              {[1, 2, 3].map((n) => <div key={n} className="blog-card skeleton" style={{ minHeight: 280 }} />)}
+              {[1, 2, 3].map((n) => <Skeleton key={n} style={{ minHeight: 280 }} />)}
             </div>
           ) : (
           <div className="grid-2">

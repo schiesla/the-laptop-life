@@ -1,7 +1,5 @@
 /* Hero */
-.hero { background: var(--surface-inverse); color: var(--text-on-inverse); padding: 132px 0 116px; text-align: center; }
-
-.hero-tag { display: inline-block; background: none; color: var(--ember-400); font-family: var(--font-mono); font-size: var(--eyebrow-size); font-weight: var(--eyebrow-weight); text-transform: uppercase; letter-spacing: var(--eyebrow-tracking); padding: 0; border-radius: 0; margin-bottom: 28px; }
+.hero { background: var(--surface-inverse); color: var(--text-on-inverse); padding: 132px 0 116px; }
 
 .hero h1 { font-family: var(--font-display); font-size: var(--display-xl); font-weight: var(--display-weight); line-height: var(--display-leading); letter-spacing: var(--display-tracking); margin: 0 0 28px; }
 
@@ -9,7 +7,8 @@
 
 .hero p { font-size: var(--lead-size); line-height: var(--lead-leading); color: var(--text-on-inverse-muted); max-width: 56ch; margin: 0 auto 40px; text-wrap: pretty; }
 
-.hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-cta .btn.btn-primary { color: var(--text-on-accent); }
 
 .features-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 
@@ -21,6 +20,8 @@
 .card p { color: var(--text-body); font-size: var(--body-s); line-height: 1.6; margin: 0; text-wrap: pretty; }
 
 .gear-cta { text-align: center; margin-top: 2.5rem; }
+.gear-cta .btn.btn-outline { color: var(--text-on-accent); }
+.gear-cta .btn.btn-outline:hover { color: var(--paper-100); background-color: var(--text-on-accent);}
 
 /* Newsletter band */
 .newsletter-band { background: var(--surface-inverse); color: var(--text-on-inverse); padding: 96px 0; text-align: center; }

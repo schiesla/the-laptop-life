@@ -8,6 +8,8 @@ import './Home.css';
 import { FeatureCard } from '../../components/FeatureCard/FeatureCard';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { PostCard } from '../../components/PostCard/PostCard';
+import { Eyebrow } from '../../components/Eyebrow/Eyebrow';
+import { Skeleton } from '../../components/Skeleton/Skeleton';
 
 const features = [
   { title: 'Coffee Shop Ready', description: 'Picks chosen for real cafe conditions, not just spec sheets.' },
@@ -30,7 +32,7 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="container">
-          <span className="hero-tag">When anywhere is your office</span>
+          <Eyebrow tone='inverse' style={{marginBottom:16}}>When anywhere is your office</Eyebrow>
           <h1>The gear that makes<br /><span>anywhere work.</span></h1>
           <p>
             Honest reviews and buying guides for laptops, stands, chargers, and everything else
@@ -46,7 +48,7 @@ export default function Home() {
       {/* Why section */}
       <section className="section">
         <div className="container">
-          <p className="section-label">Why The Laptop Life</p>
+          <Eyebrow style={{marginBottom:16}}>Why The Laptop Life</Eyebrow>
           <h2 className="section-title">Built by remote workers,<br />for remote workers</h2>
           <p className="section-sub">
             No fluff, no paid placements. Just honest takes on the gear that actually makes
@@ -63,11 +65,12 @@ export default function Home() {
       {/* Featured gear */}
       <section className="section section-alt">
         <div className="container">
-          <p className="section-label">Editor's Picks</p>
+          <Eyebrow style={{marginBottom:16}}>Editor's Picks</Eyebrow>
           <h2 className="section-title">Gear worth a look</h2>
           {productsLoading ? (
             <div className="grid-3">
-              {[1, 2, 3].map((n) => <div key={n} className="skeleton" style={{ minHeight: 280, borderRadius: 'var(--radius-m)' }} />)}            </div>
+              {[1, 2, 3].map((n) => <Skeleton key={n} style={{ minHeight: 280, borderRadius: 'var(--radius-m)' }} />)}
+            </div>
           ) : (
             <div className="grid-3">
               {featuredProducts.map((p) => (
@@ -84,7 +87,7 @@ export default function Home() {
             </div>
           )}
           <div className="gear-cta">
-            <Link to="/gear" className="btn btn-primary">See All Gear</Link>
+            <Link to="/gear" className="btn btn-outline">See All Gear</Link>
           </div>
         </div>
       </section>
@@ -92,11 +95,11 @@ export default function Home() {
       {/* Latest posts */}
       <section className="section">
         <div className="container">
-          <p className="section-label">From the Blog</p>
+          <Eyebrow style={{marginBottom:16}}>From the Blog</Eyebrow>
           <h2 className="section-title">Guides worth reading</h2>
           {postsLoading ? (
             <div className="grid-2">
-              {[1, 2, 3].map((n) => <div key={n} className="skeleton" style={{ minHeight: 280, borderRadius: 'var(--radius-m)' }} />)}            </div>
+              {[1, 2, 3].map((n) => <Skeleton key={n} style={{ minHeight: 280, borderRadius: 'var(--radius-m)' }} />)}            </div>
           ) : (
             <div className="grid-2">
               {latestPosts.map((post) => (
