@@ -226,8 +226,8 @@ export const publishedPosts: ContentPost[] = [
 
       <div class="affiliate-box">
         <strong>Example of an EPR-rated cable</strong>
-        Anker 240W USB-C to USB-C Cable — rated for the full 240W EPR ceiling, so it won't bottleneck a high-wattage charger.
-        <br/><a href="https://www.amazon.com/dp/B0CCXT4QZR?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+        Anker USB-C to USB-C Cable, 240W (2-Pack, 6ft) — e-marker equipped for the full 240W EPR ceiling, so it won't bottleneck a high-wattage charger.
+        <br/><a href="https://www.amazon.com/dp/B0CR9SH46Z?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
       </div>
 
       <h3>PPS (Programmable Power Supply)</h3>
@@ -301,6 +301,138 @@ export const publishedPosts: ContentPost[] = [
 
       <h2>The Bottom Line</h2>
       <p>Skip the marketing language and check three things: total wattage against your actual devices, protocol support (especially PPS if you need it), and whether your cable can keep up. Everything else on the box — GaN, port count, colorways — is secondary.</p>
+    `,
+  },
+  {
+    slug: 'usb-c-cable-ratings-explained',
+    title: "USB-C Cable Ratings Explained: Why the Cable Matters as Much as the Charger",
+    excerpt: "A 240W charger plugged into the wrong cable can bottleneck at 60W — or worse, transfer files at USB 2.0 speeds despite a USB4 laptop on both ends. Here's how to actually read a USB-C cable's ratings.",
+    category: 'Power',
+    date: 'August 19, 2026',
+    readTime: '8 min read',
+    image: 'https://images.unsplash.com/photo-1588508065123-287b28e013da?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    imageAlt: 'coiled USB-C cables on a desk',
+    published: true,
+    sortOrder: 70,
+    body: `
+      <p class="post-disclosure"><em>This post contains affiliate links. If you buy through one, we may earn a commission at no extra cost to you.</em></p>
+
+      <h2>Two Separate Cables Wearing One Connector</h2>
+      <p>Every USB-C cable looks identical from the outside — same connector, same size, no visible way to tell a $6 charge-only cable from a $35 cable that also moves data at 40 gigabits per second. That's the actual problem: USB-C standardized the plug, not what's inside it. A cable's power rating and its data-speed rating are two completely independent specs, and a cable can be excellent at one and mediocre at the other. Plugging in "a USB-C cable" and assuming it'll do whatever your charger or laptop is capable of is how people end up with a 240W charger bottlenecked at 60W, or a USB4 dock that silently drops to USB 2.0 transfer speeds.</p>
+
+      <h2>The Power Side: What an E-marker Chip Actually Does</h2>
+      <p>Any USB-C cable can carry up to 60W (20V at 3A) with no special hardware. Above that — up to the 240W ceiling introduced by USB PD 3.1's Extended Power Range (EPR) — the cable is legally required to contain an <strong>e-marker chip</strong>, a small identification chip embedded in the connector that tells the charger and device what the cable can safely handle. Without it, a charger will refuse to negotiate past 60W even if both ends support more, as a safety measure against overheating a cable that isn't rated for the current.</p>
+      <p>This is why a cheap "240W" cable and a legitimate one can look and cost almost the same but behave completely differently — there's no visual way to confirm an e-marker chip is present or genuine without testing hardware. Buying from a known brand with clear USB-IF certification claims is the practical substitute for that testing.</p>
+
+      <h2>The Data Side: Where the Real Confusion Lives</h2>
+      <p>Data speed is graded in its own separate tier system, unrelated to wattage:</p>
+      <table class="post-table">
+        <thead>
+          <tr><th>Standard</th><th>Speed</th><th>Common on</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>USB 2.0</td><td>480 Mbps</td><td>Cheap charge-only cables, most budget cables regardless of wattage</td></tr>
+          <tr><td>USB 3.2 Gen 1</td><td>5 Gbps</td><td>Mid-range cables, external hard drives</td></tr>
+          <tr><td>USB 3.2 Gen 2</td><td>10 Gbps</td><td>Better external SSDs</td></tr>
+          <tr><td>USB4 / Thunderbolt 3</td><td>40 Gbps</td><td>External displays, Thunderbolt docks, fast NVMe enclosures</td></tr>
+          <tr><td>Thunderbolt 5 / USB4 v2</td><td>Up to 120 Gbps</td><td>Newest high-end docks and displays</td></tr>
+        </tbody>
+      </table>
+      <p>The part that trips people up: <strong>a cable can be rated for the full 240W of power and still only carry USB 2.0 data.</strong> This isn't a defect — it's extremely common, because most people charging a phone or laptop don't need fast data over that cable at all, so manufacturers save cost by leaving out the extra data wires. The reverse is also true: some high-speed data cables cap out around 60W of power despite being excellent for transferring files. Check both numbers separately; neither one predicts the other.</p>
+
+      <h2>Why Cable Length Quietly Degrades Performance</h2>
+      <p>High data speeds are much more sensitive to cable length than power delivery is. A 40Gbps-rated cable typically only holds that speed reliably up to about 0.8m (2.6ft); stretch a passive copper cable to 2m and many drop to 20Gbps or lower even with an identical "USB4" label, because signal integrity degrades over distance at that frequency. Longer runs at full speed require <strong>active cables</strong>, which have a chip built in to regenerate the signal — noticeably pricier, but the only way to keep full bandwidth past roughly 1 meter. Power delivery doesn't have this problem to nearly the same degree; a 240W-rated cable stays close to its rating at 6ft or even longer.</p>
+
+      <h2>How to Actually Read a Cable Before Buying</h2>
+      <ul>
+        <li><strong>Look for both numbers explicitly in the title/spec sheet.</strong> Wattage (e.g. "100W") and data speed (e.g. "10Gbps" or "USB4 40Gbps"), not just one. A listing that only mentions wattage is very likely a charge-only cable.</li>
+        <li><strong>"Fast charging" claims are about wattage only</strong> — don't assume it implies fast data too.</li>
+        <li><strong>Match the cable to the job, not the most impressive spec sheet</strong> — a phone-charging cable doesn't need 40Gbps data any more than an external SSD needs 240W.</li>
+        <li><strong>For anything above 60W, confirm e-marker/EPR support explicitly</strong> — look for "240W" or "EPR" stated directly, not just "fast charging."</li>
+        <li><strong>Keep high-speed data cables short</strong> — under 1m/3ft if you want to reliably hit the rated speed with a passive cable.</li>
+      </ul>
+
+      <h2>Picks at Every Tier</h2>
+      <table class="post-table">
+        <thead>
+          <tr><th>Tier</th><th>Rating</th><th>Good for</th><th>Typical price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Budget</td><td>60W, USB 2.0 data</td><td>Phone/earbuds charging only</td><td>~$10</td></tr>
+          <tr><td>Everyday</td><td>240W, USB 2.0 data</td><td>Laptop charging without needing fast transfers</td><td>~$17</td></tr>
+          <tr><td>High-speed</td><td>240W + 40Gbps USB4/Thunderbolt</td><td>External SSDs, docks, monitors — power and data together</td><td>~$29</td></tr>
+        </tbody>
+      </table>
+
+      <div class="affiliate-box">
+        <strong>Budget: Anker USB-C to USB-C Cable, 60W (2-Pack, 3.3ft)</strong>
+        No e-marker needed at this wattage, and no pretense of fast data — a straightforward charge-only cable for a phone or earbuds case.
+        <br/><a href="https://www.amazon.com/dp/B088NMR44C?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>Everyday: Anker USB-C to USB-C Cable, 240W (2-Pack, 6ft)</strong>
+        E-marker equipped for the full 240W EPR ceiling, so it won't bottleneck a high-wattage laptop charger, without paying for data speed most people won't use.
+        <br/><a href="https://www.amazon.com/dp/B0CR9SH46Z?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>High-speed: Silkland 40Gbps USB4/Thunderbolt 4 Cable, 240W</strong>
+        Rated for both the full 240W power ceiling and 40Gbps USB4/Thunderbolt data in one cable — the pick for external SSDs, docks, or monitors where both specs matter.
+        <br/><a href="https://www.amazon.com/dp/B0D1VGG939?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <h2>The Bottom Line</h2>
+      <p>A USB-C cable's connector shape tells you nothing about what's actually inside it. Check wattage and data speed as two separate numbers, match each to what you're actually plugging in, and keep high-speed cables short if you want them to hit their rated numbers in practice.</p>
+    `,
+  },
+  {
+    slug: 'does-fast-charging-damage-batteries-myth-busting',
+    title: "Does Fast Charging Damage Your Battery? Separating the Myth from the Chemistry",
+    excerpt: "\"Fast charging kills your battery\" is one of the most repeated claims in tech — and it's mostly wrong. Here's what actually degrades a lithium-ion battery, and where charge speed really fits in.",
+    category: 'Power',
+    date: 'August 19, 2026',
+    readTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1609692814858-f7cd2f0afa4f?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    imageAlt: 'smartphone charging cable plugged into a phone on a wooden table',
+    published: true,
+    sortOrder: 65,
+    body: `
+      <p class="post-disclosure"><em>This post contains affiliate links. If you buy through one, we may earn a commission at no extra cost to you.</em></p>
+
+      <h2>The Claim, and Why It's Not Quite Right Anymore</h2>
+      <p>"Fast charging degrades your battery faster than slow charging" gets repeated so often it's treated as settled fact. It's rooted in real chemistry — but it describes how lithium-ion batteries and chargers behaved years ago more than how they behave today. Modern phones, laptops, and chargers manage the charging process actively enough that charge speed alone is a minor factor compared to a few other things that get far less attention.</p>
+
+      <h2>What Actually Degrades a Lithium-Ion Battery</h2>
+      <p>Lithium-ion degradation comes down to three main drivers, roughly in order of impact:</p>
+      <ul>
+        <li><strong>Heat</strong> — by far the biggest factor. Elevated temperature accelerates the chemical side-reactions that permanently reduce a battery's capacity, regardless of what caused the heat.</li>
+        <li><strong>Time spent at high state of charge</strong> — a battery sitting at 100% for extended periods degrades faster than one cycling through a moderate range, because the cell is under more electrochemical stress near full charge.</li>
+        <li><strong>Total charge cycles and deep discharges</strong> — repeatedly draining close to 0% is harder on a cell than partial charges, and every full cycle contributes to gradual, expected capacity loss over the battery's life.</li>
+      </ul>
+      <p>Charge rate mostly matters because it's a contributor to the first factor: pushing more current into a cell generates more heat. But it's an indirect factor, not a primary one — and modern hardware actively works against it.</p>
+
+      <h2>Why Modern Fast Charging Isn't What It Used to Be</h2>
+      <p>Fast charging today isn't a constant firehose of current from 0% to 100%. Charge controllers use a <strong>CC/CV curve</strong> (constant current, then constant voltage): the battery accepts high current only up to roughly 50–80% charge, then charging automatically slows as it approaches full. This is exactly why phone makers can advertise "50% in 20 minutes" but the same charger takes nearly as long to finish the last 20% as it did the first 50% — the fast part is deliberately front-loaded onto the portion of the charge curve that tolerates it best.</p>
+      <p>On top of that, phones and laptops actively monitor battery temperature during charging and throttle current if it climbs too high, regardless of what the charger is capable of delivering. A 65W charger physically cannot force 65W into a battery that the device itself has decided to throttle for thermal reasons — the charger's rated wattage is a ceiling, not a guarantee.</p>
+
+      <h2>The Bigger Culprit: Optimized Charging Exists Because of Time at Full, Not Speed</h2>
+      <p>iOS's "Optimized Battery Charging" and Android's "Adaptive Charging" both exist specifically to reduce time spent at 100% — they learn your schedule and delay the final top-off until shortly before you typically unplug, rather than sitting fully charged all night. That these features target time at high charge rather than charge speed is a strong signal from the manufacturers themselves about which factor they consider more worth engineering around.</p>
+
+      <h2>What Actually Helps, If You Want to Maximize Battery Lifespan</h2>
+      <ul>
+        <li><strong>Keep the battery roughly between 20–80% for daily use, if you're willing to bother</strong> — avoiding the extremes matters more than avoiding fast charging.</li>
+        <li><strong>Avoid leaving devices charging in hot environments</strong> — direct sun, a hot car, or under a pillow while charging does more damage than the charge speed itself.</li>
+        <li><strong>Use the manufacturer's optimized/adaptive charging feature if available</strong> — it directly targets the highest-impact factor (time at 100%) with no effort on your part.</li>
+        <li><strong>Don't stress about using a fast charger for daily top-ups</strong> — for most people, the convenience is worth a degradation difference that's small relative to heat and charge-cycle factors.</li>
+        <li><strong>An oversized charger isn't inherently riskier</strong> — the device negotiates how much current it actually draws; a 100W charger on a phone that only requests 25W behaves the same as a 25W charger would.</li>
+      </ul>
+
+      <h2>Related Reading</h2>
+      <p>For how to actually choose a charger's wattage and protocol support, see <a href="/blog/fast-charging-explained-how-to-choose-a-brick">Fast Charging, Explained: How to Actually Choose a Charging Brick</a>. For how power bank capacity numbers translate to real-world charges, see <a href="/blog/power-bank-capacity-explained-mah-vs-wh">Power Bank Capacity Explained</a>.</p>
+
+      <h2>The Bottom Line</h2>
+      <p>Fast charging isn't harmless, but it's not the villain it's usually made out to be — heat and time spent at a high state of charge do far more long-term damage to a lithium-ion battery than charge speed alone. If you want to optimize for battery lifespan, turn on your device's adaptive charging feature and avoid heat; don't bother avoiding fast chargers out of habit.</p>
     `,
   },
 ];
@@ -397,16 +529,6 @@ export const publishedProducts: ContentProduct[] = [
     sortOrder: 40,
   },
   {
-    name: 'Anker 240W USB-C to USB-C Cable',
-    category: 'Cables',
-    price: '$15.99',
-    description: 'Rated for the full 240W EPR ceiling, so it won\'t bottleneck a high-wattage charger — pairs with any of the higher-power picks above.',
-    affiliateUrl: 'https://www.amazon.com/dp/B0CCXT4QZR?tag=schiesslestor-20',
-    badge: null,
-    published: true,
-    sortOrder: 50,
-  },
-  {
     name: 'UGREEN Nexode 65W GaN Charger',
     category: 'Power',
     price: '$27.99',
@@ -485,5 +607,35 @@ export const publishedProducts: ContentProduct[] = [
     badge: null,
     published: true,
     sortOrder: 130,
+  },
+  {
+    name: 'Anker USB-C to USB-C Cable, 60W (2-Pack, 3.3ft)',
+    category: 'Cables',
+    price: '$9.99',
+    description: 'No e-marker needed at this wattage, and no pretense of fast data — a straightforward charge-only cable for a phone or earbuds case.',
+    affiliateUrl: 'https://www.amazon.com/dp/B088NMR44C?tag=schiesslestor-20',
+    badge: null,
+    published: true,
+    sortOrder: 190,
+  },
+  {
+    name: 'Anker USB-C to USB-C Cable, 240W (2-Pack, 6ft)',
+    category: 'Cables',
+    price: '$16.99',
+    description: "E-marker equipped for the full 240W EPR ceiling, so it won't bottleneck a high-wattage laptop charger, without paying for data speed most people won't use.",
+    affiliateUrl: 'https://www.amazon.com/dp/B0CR9SH46Z?tag=schiesslestor-20',
+    badge: "Editor's Pick",
+    published: true,
+    sortOrder: 200,
+  },
+  {
+    name: 'Silkland 40Gbps USB4/Thunderbolt 4 Cable, 240W',
+    category: 'Cables',
+    price: '$28.87',
+    description: 'Rated for both the full 240W power ceiling and 40Gbps USB4/Thunderbolt data in one cable — the pick for external SSDs, docks, or monitors where both specs matter.',
+    affiliateUrl: 'https://www.amazon.com/dp/B0D1VGG939?tag=schiesslestor-20',
+    badge: null,
+    published: true,
+    sortOrder: 210,
   },
 ];

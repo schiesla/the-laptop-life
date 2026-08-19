@@ -25,8 +25,10 @@ npm run dev
 ```
 Visit `http://localhost:5173/preview` — lists all current drafts. Click into one for `/preview/:slug`, which renders through the real `BlogPost` component and CSS, so what you see is pixel-identical to what will ship. (These routes are dev-only, gated by `import.meta.env.DEV`, and are stripped out of production builds automatically.)
 
+If Claude is doing this step (e.g. checking the draft renders via its own browser tools), that is *not* the site owner's proofread — it only confirms the draft doesn't error out. Claude viewing `/preview/:slug` in its own browser session is invisible to the site owner and does not substitute for them actually seeing it. Before moving to step 3, Claude should get the rendered draft in front of the site owner directly — e.g. a screenshot, or pointing them to `http://localhost:5173/preview/:slug` to open themselves — not just describe the content back to them in chat.
+
 ### 3. Approve it
-Move (cut and paste, don't just delete) the entry from `drafts.ts` into `published.ts`'s `publishedPosts` / `publishedProducts` arrays. Never remove an entry from `published.ts` once it's there — it needs to stay available so any environment can be seeded or re-seeded from it later.
+**Only move an entry once the site owner has confirmed they've actually seen the rendered `/preview/:slug` page — not merely that they like the content described in chat, and not on the strength of Claude's own local proofing pass.** A prior "I approve X" about the underlying content (e.g. approving Notion copy) is not the same signal and doesn't clear this gate on its own; if it's unclear whether the site owner has seen the live render, ask before moving on. Once cleared: move (cut and paste, don't just delete) the entry from `drafts.ts` into `published.ts`'s `publishedPosts` / `publishedProducts` arrays. Never remove an entry from `published.ts` once it's there — it needs to stay available so any environment can be seeded or re-seeded from it later.
 
 ### 4. Make sure your AWS session is valid
 ```bash
