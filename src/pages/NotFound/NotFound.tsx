@@ -8,7 +8,7 @@ export default function NotFound() {
     <div className="not-found-header">
       <SEO title="Page Not Found" path="/404" />
       <div className="container">
-        <Eyebrow>404</Eyebrow>
+        <Eyebrow tone='inverse' style={{marginBottom:16}}>404</Eyebrow>
         <h1 className="section-title">This page doesn't exist</h1>
         <p className="not-found-sub">
           The page you're looking for may have moved or never existed. Try one of these instead.

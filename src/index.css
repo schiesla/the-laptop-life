@@ -36,11 +36,12 @@ img{max-width:100%;display:block}
 /* ── Buttons ─────────────────────────────────────────────────────────────── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:.9375rem;line-height:1;padding:12px 22px;border:1px solid transparent;border-radius:var(--radius-s);cursor:pointer;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
 .btn:active{transform:none}
-.btn-primary{background:var(--ember-500);color:var(--paper-000);border-color:var(--ember-500)}
-.btn-primary:hover{background:var(--ember-400);border-color:var(--ember-400)}
+.btn-primary{background:var(--ember-500);color:var(--text-on-accent);border-color:var(--ember-500)}
+.btn-primary:hover{background:var(--ember-400);border-color:var(--ember-400);color:var(--text-on-accent)}
 .btn-outline{background:transparent;color:var(--paper-100);border:1px solid var(--ink-500)}
 .btn-outline:hover{background:var(--paper-100);color:var(--ink-900);border-color:var(--paper-100)}
 .btn-sm{padding:8px 14px;font-size:.8125rem}
+
 
 .card-link{display:contents}
 
@@ -58,10 +59,6 @@ img{max-width:100%;display:block}
 /* ── Grids ───────────────────────────────────────────────────────────────── */
 .grid-3{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-5);margin-top:var(--space-7)}
 .grid-2{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:var(--space-5);margin-top:var(--space-7)}
-
-/* ── Toast ───────────────────────────────────────────────────────────────── */
-@keyframes fadeup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.toast{position:fixed;bottom:24px;right:24px;background:var(--surface-inverse-raised);color:var(--text-on-inverse);padding:14px 18px;border-radius:var(--radius-s);font-family:var(--font-sans);font-size:var(--body-s);font-weight:500;animation:fadeup var(--dur-slow) var(--ease-out);z-index:999;border-left:2px solid var(--ember-500);box-shadow:var(--shadow-overlay)}
 
 /* ─────────────────────────────────────────────────────────────────────────────
    LEGACY ALIASES — the only block you delete, and only once nothing uses it.
