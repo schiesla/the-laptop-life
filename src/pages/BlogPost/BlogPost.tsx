@@ -4,6 +4,8 @@ import EmailSignup from '../../components/EmailSignup/EmailSignup';
 import { usePost } from '../../hooks/usePosts';
 import useEnvVariables from '../../hooks/useEnvVariables';
 import './BlogPost.css';
+import { Prose } from '../../components/Prose/Prose';
+import { Skeleton } from '../../components/Skeleton/Skeleton';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -13,9 +15,9 @@ export default function BlogPost() {
   if (loading) {
     return (
       <div style={{ maxWidth: 740, margin: '0 auto', padding: '3rem 1.5rem' }}>
-        <div className="skeleton" style={{ height: 40, marginBottom: '1rem', borderRadius: 8 }} />
-        <div className="skeleton" style={{ height: 20, width: '60%', marginBottom: '2rem', borderRadius: 8 }} />
-        <div className="skeleton" style={{ height: 200, borderRadius: 8 }} />
+        <Skeleton style={{ height: 40, marginBottom: '1rem', borderRadius: 8 }}/>
+        <Skeleton style={{ height: 20, width: '60%', marginBottom: '2rem', borderRadius: 8 }}/>
+        <Skeleton style={{ height: 200, borderRadius: 8 }}/>
       </div>
     );
   }
@@ -55,10 +57,10 @@ export default function BlogPost() {
           />
         )}
 
-        <div
-          className="post-body"
-          dangerouslySetInnerHTML={{ __html: post.body ?? '' }}
-        />
+
+        <Prose style={{ maxWidth: 'none' }}>
+          <div dangerouslySetInnerHTML={{ __html: post.body ?? '' }} />
+        </Prose>
 
         {ENABLE_NEWSLETTER && (
           <div className="post-cta">

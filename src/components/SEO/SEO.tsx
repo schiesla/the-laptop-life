@@ -19,7 +19,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: SITE,
   url: DOMAIN,
-  logo: `${DOMAIN}/favicon.png`,
+  logo: `${DOMAIN}/favicon-512.png`,
 };
 
 const websiteJsonLd = {
@@ -45,7 +45,7 @@ export default function SEO({ title, description, path = '', type = 'website', i
     publisher: {
       '@type': 'Organization',
       name: SITE,
-      logo: { '@type': 'ImageObject', url: `${DOMAIN}/favicon.png` },
+      logo: { '@type': 'ImageObject', url: `${DOMAIN}/favicon-512.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
   } : null;

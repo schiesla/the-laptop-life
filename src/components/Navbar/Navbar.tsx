@@ -6,8 +6,9 @@ export default function Navbar() {
     <nav>
       <div className="container nav-inner">
         <NavLink to="/" className="nav-logo">
-          The Laptop<span>Life</span>
-        </NavLink>
+  <img src="/mark-bone.svg" alt="" width={22} height={22} />
+  <span>The Laptop <em>Life</em></span>
+</NavLink>
         <ul className="nav-links">
           <li><NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink></li>
           <li><NavLink to="/gear" className={({ isActive }) => isActive ? 'active' : ''}>Gear</NavLink></li>

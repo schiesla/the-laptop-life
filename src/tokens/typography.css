@@ -1,0 +1,23 @@
+:root{
+--font-display:'Newsreader',Georgia,'Times New Roman',serif;
+--font-sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
+--font-mono:'JetBrains Mono',ui-monospace,'SF Mono',monospace;
+
+/* Display — Newsreader, tight, low-contrast weights only */
+--display-xl:clamp(3rem,7vw,5.25rem); /* @kind font */
+--display-l:clamp(2.25rem,5vw,3.5rem); /* @kind font */
+--display-m:clamp(1.75rem,3.5vw,2.5rem); /* @kind font */
+--display-s:1.5rem;
+--display-weight:400;
+--display-tracking:-0.02em;
+--display-leading:1.04;
+
+/* Body — Instrument Sans */
+--body-l:1.125rem;--body-m:1rem;--body-s:0.875rem;--body-xs:0.8125rem;
+--body-leading:1.6;
+--lead-size:1.3125rem;--lead-leading:1.45;--lead-weight:400;
+
+/* Mono — specs, prices, eyebrows */
+--mono-m:0.8125rem;--mono-s:0.6875rem;
+--eyebrow-size:0.6875rem;--eyebrow-tracking:0.16em;--eyebrow-weight:500;
+}

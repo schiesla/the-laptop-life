@@ -1,0 +1,21 @@
+.button{font-family:var(--font-sans);font-weight:600;line-height:1;display:inline-flex;align-items:center;gap:8px;justify-content:center;border-radius:var(--radius-s);cursor:pointer;text-decoration:none;border:1px solid transparent;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+.button.is-disabled{opacity:.4;cursor:not-allowed}
+
+.button-sm{font-size:.8125rem;padding:8px 14px}
+.button-md{font-size:.9375rem;padding:12px 22px}
+.button-lg{font-size:1rem;padding:15px 28px}
+
+.button-primary{background:var(--ember-500);color:var(--text-on-accent);border-color:var(--ember-500)}
+.button-primary:hover:not(.is-disabled){background:var(--ember-400);border-color:var(--ember-400)}
+
+.button-solid{background:var(--ink-900);color:var(--paper-100);border-color:var(--ink-900)}
+.button-solid:hover:not(.is-disabled){background:var(--ink-700);border-color:var(--ink-700)}
+
+.button-outline{background:transparent;color:var(--text-strong);border-color:var(--ink-900)}
+.button-outline:hover:not(.is-disabled){background:var(--ink-900);color:var(--paper-100)}
+
+.button-outline.button-inverse{color:var(--paper-100);border-color:var(--ink-500)}
+.button-outline.button-inverse:hover:not(.is-disabled){background:var(--paper-100);color:var(--ink-900);border-color:var(--paper-100)}
+
+.button-ghost{background:transparent;color:var(--text-body);border-color:transparent}
+.button-ghost:hover:not(.is-disabled){color:var(--text-strong);background:var(--paper-200)}

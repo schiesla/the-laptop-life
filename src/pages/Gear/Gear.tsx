@@ -2,6 +2,11 @@ import { useState } from 'react';
 import SEO from '../../components/SEO/SEO';
 import { useProducts } from '../../hooks/useProducts';
 import './Gear.css';
+import { ProductCard } from '../../components/ProductCard/ProductCard';
+import { CategoryPill } from '../../components/CategoryPill/CategoryPill';
+import { Eyebrow } from '../../components/Eyebrow/Eyebrow';
+import { Select } from '../../components/Select/Select';
+import { Skeleton } from '../../components/Skeleton/Skeleton';
 
 type SortOption = 'featured' | 'name' | 'price-asc' | 'price-desc';
 
@@ -44,8 +49,8 @@ export default function Gear() {
       {/* Page header */}
       <div className="gear-header">
         <div className="container">
-          <p className="section-label">Hand-picked gear</p>
-          <h1 className="section-title">The Mobile Worker's Toolkit</h1>
+          <Eyebrow tone='inverse' style={{marginBottom:16}}>Hand-picked gear</Eyebrow>
+          <h1>The Mobile Worker's Toolkit</h1>
           <p className="gear-header-sub">
             Everything here is chosen for people working from cafes, co-working spaces, and living rooms.
             Affiliate links help us keep the lights on — at no extra cost to you.
@@ -59,58 +64,33 @@ export default function Gear() {
           <div className="gear-controls">
             <div className="category-filter">
               {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActive(cat)}
-                  className={`category-btn${active === cat ? ' active' : ''}`}
-                >
-                  {cat}
-                </button>
+                <CategoryPill key={cat} active={active === cat} onClick={() => setActive(cat)}>{cat}</CategoryPill>
               ))}
             </div>
-            <label className="sort-select-label">
-              Sort by
-              <select
-                id={"sort-select"}
-                className="sort-select"
-                value={sort}
-                onChange={(e) => setSort(e.target.value as SortOption)}
-              >
-                <option value="featured">Editor's Picks</option>
-                <option value="name">Name (A–Z)</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-              </select>
-            </label>
+            <Select label='Sort by' value={sort} onChange={(e) => setSort(e.target.value as SortOption)} options={[
+              { value: "featured", label: "Editor's Picks" },
+              { value: "name", label: "Name (A–Z)" },
+              { value: "price-asc", label: "Price: Low to High" },
+              { value: "price-desc", label: "Price: High to Low" }
+            ]}/>
           </div>
 
           {loading ? (
             <div className="grid-3">
-              {[1, 2, 3, 4, 5, 6].map((n) => <div key={n} className="product-card skeleton" style={{ minHeight: 320 }} />)}
+              {[1, 2, 3, 4, 5, 6].map((n) => <Skeleton key={n} height={320} />)}
             </div>
           ) : (
           <div className="grid-3">
             {sorted.map((p) => (
-              <div className="product-card" key={p.id}>
-                <div className="product-img-placeholder">{p.emoji}</div>
-                <div className="product-body">
-                  <p className="product-tag">{p.category}</p>
-                  {p.badge && <span className="product-badge">{p.badge}</span>}
-                  <h3>{p.name}</h3>
-                  <p>{p.description}</p>
-                  <div className="product-footer">
-                    <span className="price">{p.price}</span>
-                    <a
-                      href={p.affiliateUrl ?? undefined}
-                      className="btn btn-primary btn-sm"
-                      target="_blank"
-                      rel="nofollow sponsored noopener noreferrer"
-                    >
-                      View Deal →
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <ProductCard
+                key={p.id}
+                name={p.name}
+                category={p.category}
+                price={p.price}
+                description={p.description}
+                badge={p.badge}
+                href={p.affiliateUrl ?? undefined}
+              />
             ))}
           </div>
           )}

@@ -5,7 +5,7 @@ export interface ContentPost {
   category: string;
   date: string;
   readTime: string;
-  emoji: string;
+  // emoji: string;
   image?: string;
   imageAlt?: string;
   published: boolean;
@@ -18,7 +18,7 @@ export interface ContentProduct {
   category: string;
   price: string;
   description: string;
-  emoji: string;
+  // emoji: string;
   affiliateUrl: string;
   badge: string | null;
   published: boolean;
