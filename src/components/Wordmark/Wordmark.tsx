@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Wordmark.css';
 
 /**
  * The brand lockup: laptop mark + "The Laptop Life" set in Newsreader, with "Life" in ember italic.
@@ -14,14 +14,12 @@ export interface WordmarkProps {
 }
 
 export function Wordmark({ inverse, size = 'm', markSrc, style }: WordmarkProps) {
-  const fs = size === 'l' ? '1.5rem' : size === 's' ? '1rem' : '1.1875rem';
   const px = size === 'l' ? 28 : size === 's' ? 18 : 22;
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', ...style }}>
-      {markSrc ? <img src={markSrc} alt="" width={px} height={px} style={{ display: 'block' }} /> : null}
-      <span style={{ fontFamily: 'var(--font-display)', fontSize: fs, fontWeight: 400, letterSpacing: '-0.02em',
-        color: inverse ? 'var(--text-on-inverse)' : 'var(--text-strong)' }}>
-        The Laptop <em style={{ fontStyle: 'italic', color: 'var(--ember-500)' }}>Life</em>
+    <span className={`wordmark wordmark-${size}${inverse ? ' wordmark-inverse' : ''}`} style={style}>
+      {markSrc ? <img src={markSrc} alt="" width={px} height={px} className="wordmark-mark" /> : null}
+      <span className="wordmark-text">
+        The Laptop <em className="wordmark-life">Life</em>
       </span>
     </span>
   );

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Eyebrow.css';
 
 /** Mono, uppercase, wide-tracked kicker that sits above a display heading. */
 export interface EyebrowProps {
@@ -9,9 +10,6 @@ export interface EyebrowProps {
 }
 
 export function Eyebrow({ children, tone = 'accent', as: Tag = 'p', style }: EyebrowProps) {
-  const color = tone === 'accent' ? 'var(--text-accent)' : tone === 'inverse' ? 'var(--ember-500)' : 'var(--text-muted)';
-  return (
-    <Tag style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--eyebrow-size)', fontWeight: 500,
-      letterSpacing: 'var(--eyebrow-tracking)', textTransform: 'uppercase', color, margin: 0, ...style }}>{children}</Tag>
-  );
+  const toneClass = tone !== 'accent' ? ` eyebrow-${tone}` : '';
+  return <Tag className={`eyebrow${toneClass}`} style={style}>{children}</Tag>;
 }

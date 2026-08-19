@@ -1,0 +1,5 @@
+.badge{display:inline-block;font-family:var(--font-mono);font-size:var(--mono-s);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:3px 7px;border-radius:var(--radius-xs)}
+.badge-accent{background:var(--ember-500);color:var(--text-on-accent);border:1px solid var(--ember-500)}
+.badge-clay{background:var(--clay-500);color:var(--paper-100);border:1px solid var(--clay-500)}
+.badge-moss{background:var(--moss-100);color:var(--moss-600);border:1px solid var(--moss-400)}
+.badge-quiet{background:transparent;color:var(--text-muted);border:1px solid var(--line-hairline)}
