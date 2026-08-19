@@ -32,7 +32,7 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="container">
-          <Eyebrow tone='inverse' style={{marginBottom:16}}>When anywhere is your office</Eyebrow>
+          <Eyebrow tone='inverse' as='span'>When anywhere is your office</Eyebrow>
           <h1>The gear that makes<br /><span>anywhere work.</span></h1>
           <p>
             Honest reviews and buying guides for laptops, stands, chargers, and everything else

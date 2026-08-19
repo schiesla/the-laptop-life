@@ -1,7 +1,7 @@
 /* Hero */
 .hero { background: var(--surface-inverse); color: var(--text-on-inverse); padding: 132px 0 116px; }
 
-.hero h1 { font-family: var(--font-display); font-size: var(--display-xl); font-weight: var(--display-weight); line-height: var(--display-leading); letter-spacing: var(--display-tracking); margin: 0 0 28px; }
+.hero h1 { font-family: var(--font-display); font-size: var(--display-xl); font-weight: var(--display-weight); line-height: var(--display-leading); letter-spacing: var(--display-tracking); margin: 16px 0 28px 0; }
 
 .hero h1 span { color: var(--ember-500); font-style: italic; }
 
