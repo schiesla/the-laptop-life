@@ -3,20 +3,21 @@ import './Footer.css';
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="container footer-inner">
-        <span className="footer-logo">The Laptop<span>Life</span></span>
-        <ul className="footer-links">
-          <li><Link to="/gear">Gear</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/privacy">Privacy</Link></li>
-          <li><Link to="/terms">Terms</Link></li>
-        </ul>
-        <p className="footer-copy">
-          © {new Date().getFullYear()} The Laptop Life. Some links are affiliate links.
-        </p>
-      </div>
-    </footer>
+    <footer className="footer">
+  <div className="footer-inner">
+    <Link to="/" className="footer-mark">
+      <img src={'/mark-bone.svg'} alt="" width="18" height="18" />
+      <span>The Laptop <em>Life</em></span>
+    </Link>
+    <ul>
+      <li><Link to="/gear">Gear</Link></li>
+      <li><Link to="/blog">Blog</Link></li>
+      <li><Link to="/about">About</Link></li>
+      <li><Link to="/privacy">Privacy</Link></li>
+      <li><Link to="/terms">Terms</Link></li>
+    </ul>
+    <p className="footer-legal">© {new Date().getFullYear()} The Laptop Life. Some links are affiliate links.</p>
+  </div>
+</footer>
   );
 }

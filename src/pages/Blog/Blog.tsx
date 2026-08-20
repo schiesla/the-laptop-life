@@ -1,10 +1,14 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import { usePosts } from '../../hooks/usePosts';
 import './Blog.css';
+import { PostCard } from '../../components/PostCard/PostCard';
+import { Eyebrow } from '../../components/Eyebrow/Eyebrow';
+import { Skeleton } from '../../components/Skeleton/Skeleton';
 
 export default function Blog() {
   const { posts, loading } = usePosts();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -15,8 +19,8 @@ export default function Blog() {
       />
       <div className="blog-header">
         <div className="container">
-          <p className="section-label">Guides & Reviews</p>
-          <h1 className="section-title">The Blog</h1>
+          <Eyebrow tone='inverse' style={{marginBottom:16}}>Guides & Reviews</Eyebrow>
+          <h1>The Blog</h1>
           <p className="blog-header-sub">
             In-depth buying guides, setup walkthroughs, and honest gear reviews for the mobile worker.
           </p>
@@ -27,34 +31,26 @@ export default function Blog() {
         <div className="container">
           {loading ? (
             <div className="grid-2">
-              {[1, 2, 3].map((n) => <div key={n} className="blog-card skeleton" style={{ minHeight: 280 }} />)}
+              {[1, 2, 3].map((n) => <Skeleton key={n} height={280}/>)}
             </div>
           ) : (
           <div className="grid-2">
             {posts.map((post) => (
-              <Link to={`/blog/${post.slug}`} key={post.id} className="card-link">
-                <article className="blog-card">
-                  {post.image ? (
-                    <img
-                      src={post.image}
-                      alt={post.imageAlt ?? post.title}
-                      className="blog-card-img"
-                    />
-                  ) : (
-                    <div className="blog-card-img-placeholder">{post.emoji}</div>
-                  )}
-                  <div className="blog-card-body">
-                    <div className="blog-meta">
-                      <span>{post.category}</span>
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                    <h3>{post.title}</h3>
-                    <p>{post.excerpt}</p>
-                    <span className="read-more">Read article →</span>
-                  </div>
-                </article>
-              </Link>
+              <PostCard
+                key={post.id}
+                href={`/blog/${post.slug}`}
+                onClick={(e) => {
+                  if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+                  e.preventDefault();
+                  navigate(`/blog/${post.slug}`);
+                }}
+                title={post.title}
+                excerpt={post.excerpt}
+                category={post.category}
+                date={post.date}
+                readTime={post.readTime}
+                image={post.image}
+              />
             ))}
           </div>
           )}

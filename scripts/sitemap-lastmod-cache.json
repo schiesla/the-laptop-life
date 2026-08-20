@@ -1,0 +1,30 @@
+{
+  "static:/": {
+    "hash": "911fc0c48cb0c70601db5775a9bef1b740dc4cc9f9b46389b9f0563fe7eb94d7",
+    "lastmod": "2026-08-11"
+  },
+  "static:/gear": {
+    "hash": "911fc0c48cb0c70601db5775a9bef1b740dc4cc9f9b46389b9f0563fe7eb94d7",
+    "lastmod": "2026-08-11"
+  },
+  "static:/blog": {
+    "hash": "911fc0c48cb0c70601db5775a9bef1b740dc4cc9f9b46389b9f0563fe7eb94d7",
+    "lastmod": "2026-08-11"
+  },
+  "static:/about": {
+    "hash": "911fc0c48cb0c70601db5775a9bef1b740dc4cc9f9b46389b9f0563fe7eb94d7",
+    "lastmod": "2026-08-11"
+  },
+  "post:magsafe-vs-qi2-vs-standard-wireless-charging": {
+    "hash": "cdd8220614616bbb2da63f16591808c397ca7f2f7827f941b121778727e598fe",
+    "lastmod": "2026-08-11"
+  },
+  "post:power-bank-capacity-explained-mah-vs-wh": {
+    "hash": "22b6c5553e7b519ec0d499fbc247ff6f909f7d1ba519590d91f3e868d5e624b1",
+    "lastmod": "2026-08-11"
+  },
+  "post:fast-charging-explained-how-to-choose-a-brick": {
+    "hash": "0f38f3bb97098128ebdb35cba4e067ec3470e7004fa5c32fca7bdbbfe9a23f42",
+    "lastmod": "2026-08-11"
+  }
+}

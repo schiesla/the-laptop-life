@@ -1,0 +1,3 @@
+.skeleton{background:linear-gradient(90deg,var(--paper-200) 25%,var(--paper-300) 50%,var(--paper-200) 75%);background-size:800px 100%;animation:tll-shimmer 1.4s linear infinite}
+
+@keyframes tll-shimmer{from{background-position:-400px 0}to{background-position:400px 0}}

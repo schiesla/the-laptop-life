@@ -1,10 +1,11 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { draftPosts } from '../../data/drafts';
+import { draftPosts, draftProducts } from '../../data/drafts';
+import { ProductCard } from '../../components/ProductCard/ProductCard';
 import '../BlogPost/BlogPost.css';
 
 export function PreviewIndex() {
   return (
-    <div style={{ maxWidth: 740, margin: '0 auto', padding: '3rem 1.5rem' }}>
+    <div style={{ maxWidth: 1180, margin: '0 auto', padding: '3rem 1.5rem' }}>
       <h1>Draft posts</h1>
       <p>Unpublished content from src/data/drafts.ts — not seeded to the database yet.</p>
       {draftPosts.length === 0 && <p>No drafts.</p>}
@@ -15,6 +16,23 @@ export function PreviewIndex() {
           </li>
         ))}
       </ul>
+
+      <h1 style={{ marginTop: '3rem' }}>Draft products</h1>
+      <p>Unpublished products from src/data/drafts.ts — not seeded to the database yet.</p>
+      {draftProducts.length === 0 && <p>No draft products.</p>}
+      <div className="grid-3">
+        {draftProducts.map((product) => (
+          <ProductCard
+            key={product.name}
+            name={product.name}
+            category={product.category}
+            price={product.price}
+            description={product.description}
+            badge={product.badge}
+            href={product.affiliateUrl ?? undefined}
+          />
+        ))}
+      </div>
     </div>
   );
 }

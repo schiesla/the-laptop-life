@@ -1,0 +1,9 @@
+.wordmark{display:inline-flex;align-items:center;gap:10px}
+.wordmark-mark{display:block}
+.wordmark-text{font-family:var(--font-display);font-weight:400;letter-spacing:-0.02em;color:var(--text-strong)}
+.wordmark-inverse .wordmark-text{color:var(--text-on-inverse)}
+.wordmark-life{font-style:italic;color:var(--ember-500)}
+
+.wordmark-s .wordmark-text{font-size:1rem}
+.wordmark-m .wordmark-text{font-size:1.1875rem}
+.wordmark-l .wordmark-text{font-size:1.5rem}

@@ -1,5 +1,5 @@
 .about-header { background: var(--black); color: var(--white); padding: 4rem 0; }
-.about-header .section-title { color: var(--white); }
+.about-header h1 { font-family: var(--font-display); font-size: var(--display-l); font-weight: var(--display-weight); line-height: var(--display-leading); letter-spacing: var(--display-tracking); }
 
 .about-content { max-width: 740px; }
 

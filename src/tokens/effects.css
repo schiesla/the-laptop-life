@@ -1,0 +1,23 @@
+:root{
+/* Corners: nearly square. 2px is the house radius; 999px only for pills. */
+--radius-xs:2px;--radius-s:3px;--radius-m:4px;--radius-pill:999px;
+
+/* Elevation is drawn with lines first, shadow second. Shadows are warm, never black. */
+--shadow-none:none;
+--shadow-raise:0 1px 0 var(--paper-300);
+--shadow-card-hover:0 10px 30px -18px rgba(20,17,14,.45);
+--shadow-overlay:0 24px 60px -24px rgba(20,17,14,.55);
+--shadow-inset-line:inset 0 -1px 0 var(--paper-300);
+
+--border-hairline:1px solid var(--line-hairline);
+--border-strong:1px solid var(--line-strong);
+
+/* Motion: short, flat, no bounce. */
+--ease-out:cubic-bezier(.2,.6,.25,1); /* @kind other */
+--dur-fast:120ms; /* @kind other */
+--dur-base:180ms; /* @kind other */
+--dur-slow:320ms; /* @kind other */
+
+--focus-ring:0 0 0 2px var(--paper-100),0 0 0 4px var(--ink-900);
+--grain-tint:rgba(20,17,14,.035);
+}

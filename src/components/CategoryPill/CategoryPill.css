@@ -1,0 +1,3 @@
+.category-pill{font-family:var(--font-sans);font-size:.8125rem;font-weight:500;cursor:pointer;padding:7px 14px;border-radius:var(--radius-pill);border:1px solid var(--line-hairline);background:transparent;color:var(--text-body);transition:all var(--dur-fast) var(--ease-out)}
+.category-pill:hover:not(.is-active){background:var(--paper-200)}
+.category-pill.is-active{border-color:var(--ink-900);background:var(--ink-900);color:var(--paper-100)}
