@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && tsx scripts/generate-sitemap.mjs && vite build",
+    "build": "tsc -b && tsx scripts/generate-sitemap.mjs && vite build && tsx scripts/prerender-meta.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
