@@ -14,6 +14,95 @@ import type { ContentPost, ContentProduct } from './contentTypes';
 
 export const publishedPosts: ContentPost[] = [
   {
+    slug: 'coffee-shop-power-setup',
+    title: 'The Coffee Shop Power Setup: A Practical Kit for Working Untethered',
+    excerpt:
+      "One outlet, three people who got there first, and a laptop at 20%. Here's a practical, un-fussy power setup for working from a coffee shop — and the reasoning behind each piece, pulled from our deeper guides.",
+    category: 'Power',
+    date: 'September 2, 2026',
+    readTime: '8 min read',
+    image:
+      'https://images.unsplash.com/photo-1521017432531-fbd92d768814?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    imageAlt: 'laptop and coffee cup on a cafe table near a window',
+    published: true,
+    sortOrder: 80,
+    body: `
+      <p class="post-disclosure"><em>This post contains affiliate links. If you buy through one, we may earn a commission at no extra cost to you.</em></p>
+
+      <h2>The Actual Problem Isn't Charging — It's Not Having to Think About It</h2>
+      <p>Working from a coffee shop has one recurring failure mode: you arrive with 40% battery, the only outlet is across the room or already taken, and two hours later you're hunting for a spot near a wall socket instead of finishing what you came to do. The fix isn't a single gadget, it's a small kit that removes the outlet from the equation entirely — and each piece of that kit is something we've already covered in depth. This post pulls those together into one practical setup, with the reasoning kept short since the full explanations live in the linked guides.</p>
+
+      <h2>The Kit</h2>
+      <p>Four pieces, each covered in depth in one of our guides. The specific pick and a direct link for every one is listed right below the table.</p>
+      <table class="post-table">
+        <thead>
+          <tr><th>Piece</th><th>Job</th><th>Why this spec</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wall charger</td>
+            <td>Top off everything overnight or at home before you leave</td>
+            <td>Get one with <strong>multiple ports</strong> (at least 2&times; USB-C plus a USB-A) at 65&ndash;67W total, so a laptop, phone, and the power bank all charge from one compact brick — see our <a href="/blog/fast-charging-explained-how-to-choose-a-brick">charger wattage guide</a></td>
+          </tr>
+          <tr>
+            <td>Power bank</td>
+            <td>Recharge without an outlet at all</td>
+            <td><strong>Built-in cable</strong> so there's nothing to forget, <strong>plus extra ports</strong> and enough wattage to top off almost anything — a laptop included — while capacity stays under the 100Wh airline limit — see our <a href="/blog/power-bank-capacity-explained-mah-vs-wh">power bank capacity guide</a></td>
+          </tr>
+          <tr>
+            <td>USB-C cable</td>
+            <td>Deliver the power without bottlenecking — and reach an outlet that isn't next to you</td>
+            <td>Rated for your charger's full wattage, not just "USB-C" — and <strong>go long (6&nbsp;ft / 2&nbsp;m)</strong> so a distant, low, or awkward outlet is still usable without hovering over it — see our <a href="/blog/usb-c-cable-ratings-explained">cable ratings guide</a></td>
+          </tr>
+          <tr>
+            <td>3-in-1 travel charging station (optional)</td>
+            <td>Charge phone, watch, and earbuds together from one folding pad — at home before you leave or on a hotel nightstand</td>
+            <td>A foldable Qi2/MagSafe 3-in-1 collapses three chargers into one pocketable pad — more on the tech in our <a href="/blog/magsafe-vs-qi2-vs-standard-wireless-charging">MagSafe vs Qi2 guide</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="affiliate-box">
+        <strong>Wall charger: Anker Prime 67W GaN Charger</strong>
+        Three ports (2&times; USB-C, 1&times; USB-A) so the laptop, phone, and power bank all charge off one plug at home before you head out, and small enough to live in the bag permanently.
+        <br/><a href="https://www.amazon.com/dp/B0C4YTB56H?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>Power bank: Anker 25,000mAh Laptop Power Bank, 165W</strong>
+        The built-in USB-C cable doubles as a carry strap so there's nothing to forget, two extra ports cover a watch or earbuds, and 165W is enough to top off a laptop too — capacity sits just under the airline-friendly line.
+        <br/><a href="https://www.amazon.com/dp/B0DCBB2YTR?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>Cable: Anker USB-C to USB-C Cable, 240W (6ft / 2m)</strong>
+        Rated for the full EPR ceiling so it won't bottleneck the charger above, and the 6-foot length is the real point: it lets you reach an outlet a seat or two away instead of relocating. Cheap enough to keep a spare clipped to the power bank.
+        <br/><a href="https://www.amazon.com/dp/B0CR9SH46Z?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <strong>3-in-1 travel station: Anker MagGo 3-in-1 Foldable</strong>
+        Folds flat for a bag, snaps your phone on with Qi2/MagSafe, and charges an Apple Watch and earbuds at the same time — one pad instead of three chargers for home or hotel nights. New to the wireless standards? Our <a href="/blog/magsafe-vs-qi2-vs-standard-wireless-charging">MagSafe vs Qi2 guide</a> covers the tech.
+        <br/><a href="https://www.amazon.com/dp/B0D8PYWHZR?tag=schiesslestor-20" target="_blank" rel="nofollow sponsored noopener noreferrer">Check price on Amazon →</a>
+      </div>
+
+      <h2>Does Fast Charging on the Go Hurt the Battery?</h2>
+      <p>Short answer: not meaningfully. Topping off a laptop or phone mid-day with a fast charger is a minor factor in long-term battery health compared to heat and time spent sitting at 100% — see our full <a href="/blog/does-fast-charging-damage-batteries-myth-busting">myth-busting breakdown</a> if you want the chemistry. Practically: charge when you need to, don't obsess over unplugging early.</p>
+
+      <h2>Packing It So You Actually Use It</h2>
+      <p>The kit only works if it's genuinely no-effort to bring. A few habits that make the difference:</p>
+      <ul>
+        <li><strong>Keep the power bank pre-charged and in the bag permanently</strong>, not charged the night before — the plan fails the first time you forget to charge it separately.</li>
+        <li><strong>Leave a second cable clipped to the power bank itself</strong> so you're never digging through a bag for the one cable that matters — unless your power bank has the cable built in, in which case that's already handled.</li>
+        <li><strong>Charge the power bank alongside your laptop overnight</strong>, not as an afterthought — plug both into the multi-port wall charger at once so it's one habit, not two.</li>
+        <li><strong>Don't rely on the cafe's outlets as the plan</strong> — treat any outlet you do get as a bonus top-up, not the thing the day depends on.</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>A coffee shop power setup isn't about any single high-spec gadget — it's a charger, a cable actually rated for it, and a power bank sized for a real workday, treated as a permanent kit rather than something assembled the morning you need it. Get those three pieces right once, and the outlet across the room stops being your problem.</p>
+    `,
+  },
+  {
     slug: 'magsafe-vs-qi2-vs-standard-wireless-charging',
     title: "MagSafe vs. Qi2 vs. Standard Wireless Charging: What's Actually Different",
     excerpt: "MagSafe, Qi2, and plain old Qi all promise cable-free charging, but they don't align magnets, hit top speeds, or work across phone brands the same way. Here's what actually separates them.",

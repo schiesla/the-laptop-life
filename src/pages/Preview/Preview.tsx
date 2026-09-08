@@ -1,6 +1,7 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { draftPosts, draftProducts } from '../../data/drafts';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
+import { Prose } from '../../components/Prose/Prose';
 import '../BlogPost/BlogPost.css';
 
 export function PreviewIndex() {
@@ -68,10 +69,9 @@ export default function Preview() {
           />
         )}
 
-        <div
-          className="post-body"
-          dangerouslySetInnerHTML={{ __html: post.body ?? '' }}
-        />
+        <Prose style={{ maxWidth: 'none' }}>
+          <div dangerouslySetInnerHTML={{ __html: post.body ?? '' }} />
+        </Prose>
       </article>
     </>
   );
